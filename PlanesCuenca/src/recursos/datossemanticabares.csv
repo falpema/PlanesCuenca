@@ -1,0 +1,16 @@
+Identificador,Nombre,Sector,Categoria,Latitud,Longitud,HorarioApertura,HoraCierre,Direccion,Precio,Discoteca,Karaoke,Bar
+1,Indigo Bar,Centro Historico,"4,1",-2.898518,-79.003157,09:00:00,03:00:00,Presidente Borrero,3,Si,Si,Si
+2,Verde Pinton y Maduro,Centro Historico,"4,3",-2.900089,-79.003771,19:00:00,02:00:00,Presidente Borrero,10,Si,No,Si
+3,Pa Cortarse las venas,Puente Roto,"4,4",-2.905338,-79.002428,10:00:00,03:00:00,"Avenida Jose Peralta,",10,Si,Si,Si
+4,Niddia Fuzzion Party,Centro Historico,"4,1",-2.901804,-79.003649,21:00:00,03:00:00,Calle Larga 6-111 & Presidente Borrero,5,Si,No,Si
+5,Parola,Centro Historico,4,-2.902239,-79.002893,21:00:00,03:00:00,Hermano Miguel y Calle Larga,15,No,No,Si
+6,Años 80s,Estadio Alejandro Serrano Aguilar,4,-2.906106,-79.004923,22:00:00,03:00:00,"Florencia Astudillo, Avenida Jose Peralta",5,Si,No,Si
+7,Liron Liron,Centro Historico,"4,6",-2.895452,-79.005071,12:00:00,01:00:00,Gran Colombia,5,Si,No,Si
+8,Golden Prage Club,Estadio Alejandro Serrano Aguilar,"4,4",-2.906510,-79.003361,07:00:00,02:00:00,"Calle Alfonso Cordero, Todos Santo",5,No,No,Si
+9,La Mesa Salsa Y Son,Centro Historico,"4,3",-2.896881,-78.999121,10:00:00,02:30:00,"Gran Colombia, Tomás Ordóñez 3-35",5,Si,No,Si
+10,Rolings,Estadio Alejandro Serrano Aguilar,"4,4",-2.904725,-79.001842,22:00:00,03:00:00,Florencia Astudillo,10,Si,No,Si
+11,Bar Zaruma,Centro Historico,"4,7",-2.901387,-79.002912,19:00:00,02:00:00,Hermano Miguel 4-67,3,No,Si,Si
+12,Lola’s,Estadio Alejandro Serrano Aguilar,"4,6",-2.904754,-79.001918,10:00:00,03:00:00,"Av Florencia de Astudillo Y, Cornelio Merchan",20,Si,No,Si
+13,Beer House,Centro Historico,"4,2",-2.901124,-79.003733,10:00:00,01:00:00,Calle Presidente Borrero,3,No,No,Si
+14,Goza Espresso Bar,Centro Historico,"4,5","-2.901350,",-79.003942,08:00:00,00:00:00,Presidente Borrero,15,No,No,Si
+15,Safari,Remigio Crespo,"4,4",-2.902557,-79.013942,16:00:00,00:00:00,Remigio Crespo,3,No,No,Si
