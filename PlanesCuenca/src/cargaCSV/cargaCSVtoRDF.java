@@ -23,9 +23,9 @@ import org.apache.jena.rdf.model.ModelFactory;
 @SessionScoped
 public class cargaCSVtoRDF {
 
-	public static void main(String[] args) {
-		ejecutarCSV();
-	}
+//	public static void main(String[] args) {
+//		ejecutarCSV();
+//	}
 		
 
 	public static void ejecutarCSV()
