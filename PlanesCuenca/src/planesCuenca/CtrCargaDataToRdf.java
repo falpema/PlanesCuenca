@@ -24,6 +24,7 @@ public class CtrCargaDataToRdf {
 	}
 	
 	public void CargarRdfRestaurantes(){
+		
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar de Datos correcta."));
 	}
 
