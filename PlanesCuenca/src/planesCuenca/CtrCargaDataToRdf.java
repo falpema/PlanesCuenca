@@ -1,5 +1,7 @@
 package planesCuenca;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.*;
+import javax.faces.context.FacesContext;
 
 
 
@@ -19,6 +21,10 @@ public class CtrCargaDataToRdf {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+	
+	public void CargarRdfRestaurantes(){
+		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar de Datos correcta."));
 	}
 
 }

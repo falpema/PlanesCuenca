@@ -4,8 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	>
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<h:outputStylesheet name="common-style.css" library="css" />
@@ -15,17 +14,34 @@
 
 
 	<h1>Cargar Fuente de Datos Heterogenas</h1>
-	 <h:form>
-            <center>
-                <div class="Container MaxWid500 TexAlCenter">
-                    <div class="EmptyBox5"></div>
+	<p:tooltip />
 
-                    <p:panel header="{##{ctrCargaDataToRdf.titulo}}" style="background-color: white">
-                        <div class="EmptyBox10"></div>
-                       
-                    </p:panel>
-                </div>
-            </center>
-        </h:form>
+	<h:form>
+		<p:messages id="messages" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
+
+
+	</h:form>
+
+	<p:separator />
+
+	<h:form>
+		<center>
+			<div>
+				<div class="EmptyBox5"></div>
+				<h:panelGrid id="grid" columns="2" cellpadding="5">
+
+					<h:outputText  value="Cargar Datos Restarante:"  style="float:right; font-style: italic" />
+
+					<p:commandButton process="@form" ajax="false"
+						action="#{ctrCargaDataToRdf.CargarRdfRestaurantes}"
+						value="Cargar Datos Rdf restaurantes" update="grid" />
+
+				</h:panelGrid>
+
+			</div>
+		</center>
+	</h:form>
 </h:body>
 </html>
