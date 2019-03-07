@@ -16,5 +16,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="src/resourcesfp/javax.faces-api-2.1.jar"/>
 	<classpathentry kind="lib" path="src/resourcesfp/jena-csv-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-core-3.2.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/org.apache.commons.io.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
