@@ -18,43 +18,39 @@
 	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-csv-3.6.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-core-3.2.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/resourcesfp/org.apache.commons.io.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-arq-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/xercesImpl-2.11.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/xml-apis-1.4.01.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/collection-0.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-cli-1.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-codec-1.9.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-csv-1.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-io-2.5.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-lang3-3.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/httpclient-4.5.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/httpclient-cache-4.5.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/httpcore-4.4.6.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jackson-annotations-2.9.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jackson-core-2.9.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jackson-databind-2.9.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jar_files.zip"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jcl-over-slf4j-1.7.25.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-base-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-cmds-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-core-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-csv-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-dboe-base-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-dboe-index-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-dboe-transaction-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-dboe-trans-data-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-iri-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-rdfconnection-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-shaded-guava-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-tdb2-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jena-tdb-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/jsonld-java-0.11.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/libthrift-0.10.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/log4j-1.2.17.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/slf4j-api-1.7.25.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/slf4j-log4j12-1.7.25.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/resourcesfp/primefaces-6.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-arq-3.6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/txmunoz/Documentos/MAESTRIAGETI/NUEVASTENDENCIAS/LIBRERIAS/commons-logging-1.2.1.1.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/collection-0.7.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpclient-cache-4.5.3.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-core-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-databind-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jcl-over-slf4j-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-base-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-cmds-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-core-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-base-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-index-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-trans-data-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-transaction-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-iri-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-rdfconnection-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-shaded-guava-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-tdb-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-tdb2-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jsonld-java-0.11.1.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/libthrift-0.10.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
