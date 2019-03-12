@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mojarra">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mojarra">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/resourcesfp/javax.faces-api-2.1.jar"/>
-	<classpathentry kind="lib" path="src/resourcesfp/jena-csv-3.6.0.jar"/>
-	<classpathentry kind="lib" path="src/resourcesfp/jena-core-3.2.0.jar"/>
-	<classpathentry kind="lib" path="src/resourcesfp/org.apache.commons.io.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/javax.faces-api-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-csv-3.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-core-3.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/org.apache.commons.io.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/primefaces-6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/resourcesfp/jena-arq-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/collection-0.7.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpclient-cache-4.5.3.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-core-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jackson-databind-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jcl-over-slf4j-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-base-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-cmds-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-core-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-base-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-index-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-trans-data-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-dboe-transaction-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-iri-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-rdfconnection-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-shaded-guava-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-tdb-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jena-tdb2-3.6.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/jsonld-java-0.11.1.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/libthrift-0.10.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
