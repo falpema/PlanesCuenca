@@ -32,8 +32,8 @@ import cargaCSV.cargaCSVtoRDF;
 
 
 /**
-*
-* @author FABIAN PENALOZA
+* load restaurants of geojson to rdf
+* @author FABIAN PENALOZA mail falpema@gmail.com
 */
 @ManagedBean
 @ViewScoped

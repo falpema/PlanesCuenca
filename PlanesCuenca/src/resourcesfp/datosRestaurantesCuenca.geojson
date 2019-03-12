@@ -9,7 +9,8 @@
       "properties": {
         "@id": "node/1754653427",
         "amenity": "fast_food",
-        "name": "Chicago Pizza"
+        "name": "Chicago Pizza",
+        "price": 20
       },
       "geometry": {
         "type": "Point",
@@ -26,7 +27,9 @@
         "@id": "node/3461589232",
         "addr:street": "Gran Colombia",
         "amenity": "fast_food",
-        "name": "Andre Fast Food"
+        "name": "Andre Fast Food",
+        "price": 15
+
       },
       "geometry": {
         "type": "Point",
@@ -48,7 +51,8 @@
         "name": "Pizza y focaccia",
         "name:it": "Pizza y focaccia",
         "opening_hours": "Mo-Sa 11:30-23:00",
-        "phone": "0993628270"
+        "phone": "0993628270",
+        "price": 10
       },
       "geometry": {
         "type": "Point",
@@ -73,7 +77,8 @@
         "opening_hours": "Mo-Sa 08:00-19:00",
         "outdoor_seating": "no",
         "smoking": "no",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "price": 15
       },
       "geometry": {
         "type": "Point",
@@ -89,7 +94,8 @@
       "properties": {
         "@id": "node/3895503259",
         "amenity": "fast_food",
-        "name": "Jack"
+        "name": "Jack",
+        "price": 10
       },
       "geometry": {
         "type": "Point",
@@ -114,7 +120,8 @@
         "name": "Canaima",
         "smoking": "no",
         "takeaway": "yes",
-        "website": "https://www.facebook.com/CanaimaCuisine"
+        "website": "https://www.facebook.com/CanaimaCuisine",
+        "price": 5
       },
       "geometry": {
         "type": "Point",
@@ -131,7 +138,8 @@
         "@id": "node/4145414937",
         "addr:street": "Avenida 12 de Abril",
         "amenity": "fast_food",
-        "name": "Q Papa"
+        "name": "Q Papa",
+        "price": 5
       },
       "geometry": {
         "type": "Point",
@@ -147,7 +155,8 @@
       "properties": {
         "@id": "node/4243162213",
         "amenity": "fast_food",
-        "name": "Döner Janos"
+        "name": "Döner Janos",
+        "price": 5
       },
       "geometry": {
         "type": "Point",
@@ -164,7 +173,9 @@
         "@id": "node/4249507191",
         "addr:street": "Presidente Córdova",
         "amenity": "fast_food",
-        "name": "perniles La patrona"
+        "name": "perniles La patrona",
+        "price": 10
+
       },
       "geometry": {
         "type": "Point",
@@ -180,7 +191,8 @@
       "properties": {
         "@id": "node/4357798897",
         "amenity": "fast_food",
-        "name": "DONNER JANOS"
+        "name": "DONNER JANOS",
+        "price": 7
       },
       "geometry": {
         "type": "Point",
@@ -196,7 +208,8 @@
       "properties": {
         "@id": "node/4365795089",
         "amenity": "fast_food",
-        "name": "Papitas El BETO"
+        "name": "Papitas El BETO",
+        "price": 7
       },
       "geometry": {
         "type": "Point",
@@ -213,7 +226,8 @@
         "@id": "node/4394583290",
         "amenity": "fast_food",
         "name": "Stop Fries",
-        "name:es": "Stop Fries"
+        "name:es": "Stop Fries",
+        "price": 10
       },
       "geometry": {
         "type": "Point",
@@ -230,7 +244,9 @@
         "@id": "node/4394593889",
         "amenity": "fast_food",
         "name": "Gara Hot Dog",
-        "name:es": "La Parada"
+        "name:es": "La Parada",
+        "price": 5
+
       },
       "geometry": {
         "type": "Point",
@@ -252,7 +268,8 @@
         "name": "AAA+ Burguer & wings",
         "opening_hours": "Mo-Fr 10:30-21:00, Sa 16:00-21:00",
         "phone": "0969222269",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "price": 20
       },
       "geometry": {
         "type": "Point",
@@ -269,7 +286,8 @@
         "@id": "node/4708436689",
         "amenity": "fast_food",
         "name": "Empanada chilena la esquina",
-        "name:es": "Empanada chilena la esquina"
+        "name:es": "Empanada chilena la esquina",
+        "price": 10
       },
       "geometry": {
         "type": "Point",
@@ -286,7 +304,8 @@
         "@id": "node/4708439590",
         "amenity": "fast_food",
         "name": "Bar comida rápida",
-        "name:es": "Bar comida rápida"
+        "name:es": "Bar comida rápida",
+        "price": 7
       },
       "geometry": {
         "type": "Point",
@@ -304,7 +323,8 @@
         "addr:street": "Benigno Malo",
         "amenity": "fast_food",
         "name": "Yogur",
-        "name:es": "Yogur"
+        "name:es": "Yogur",
+        "price": 7
       },
       "geometry": {
         "type": "Point",
@@ -321,7 +341,8 @@
         "@id": "node/4730914825",
         "amenity": "fast_food",
         "name": "Bar café",
-        "name:es": "Bar café"
+        "name:es": "Bar café",
+        "price": 7
       },
       "geometry": {
         "type": "Point",
@@ -338,7 +359,8 @@
         "@id": "node/4730914826",
         "amenity": "fast_food",
         "name": "Heladería",
-        "name:es": "Heladería"
+        "name:es": "Heladería",
+        "price": 5
       },
       "geometry": {
         "type": "Point",
@@ -356,7 +378,8 @@
         "amenity": "fast_food",
         "cuisine": "sandwich",
         "name": "Subway",
-        "name:es": "Subway"
+        "name:es": "Subway",
+        "price": 20
       },
       "geometry": {
         "type": "Point",
@@ -374,7 +397,8 @@
         "amenity": "fast_food",
         "name": "Picantes de Leo",
         "name:en": "Picantes de Leo",
-        "name:es": "Picantes de Leo"
+        "name:es": "Picantes de Leo",
+        "price": 15
       },
       "geometry": {
         "type": "Point",
@@ -394,7 +418,8 @@
         "amenity": "fast_food",
         "cuisine": "burger",
         "name": "T-REX",
-        "opening_hours": "24/7"
+        "opening_hours": "24/7",
+        "price": 10
       },
       "geometry": {
         "type": "Point",
@@ -411,7 +436,8 @@
         "@id": "node/5811329953",
         "amenity": "fast_food",
         "cuisine": "pizza",
-        "name": "Pizza XL"
+        "name": "Pizza XL",
+        "price": 12
       },
       "geometry": {
         "type": "Point",
@@ -428,7 +454,8 @@
         "@id": "node/5811330253",
         "amenity": "fast_food",
         "cuisine": "pizza",
-        "name": "Pizza XL"
+        "name": "Pizza XL",
+        "price": 25
       },
       "geometry": {
         "type": "Point",

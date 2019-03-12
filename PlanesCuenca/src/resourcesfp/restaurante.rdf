@@ -3,23 +3,7 @@
     xmlns:j.0="http://maestriageti/restaurantecuenca#"
     xmlns:j.1="http://w3c/future-csv-vocab/">
   <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Q Papa,@id:node/4145414937,addr:street:Avenida 12 de Abril}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4145414937</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0104555,-2.8990868],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >7</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Yogur,@id:node/4715960990,addr:street:Benigno Malo,name:es:Yogur}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4715960990</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0053093,-2.8998103],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >17</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Bar café,@id:node/4730914825,name:es:Bar café}</j.0:properties>
+    <j.0:properties>{amenity:fast_food,price:7,name:Bar café,@id:node/4730914825,name:es:Bar café}</j.0:properties>
     <j.0:type>Feature</j.0:type>
     <j.0:id>node/4730914825</j.0:id>
     <j.0:geometry>{coordinates:[-79.0056806,-2.9013936],type:Point}</j.0:geometry>
@@ -27,135 +11,7 @@
     >18</j.1:row>
   </rdf:Description>
   <rdf:Description>
-    <j.0:properties>{wheelchair:no,internet_access:no,amenity:fast_food,internet_access:fee:no,smoking:no,name:Ice Cream,opening_hours:Mo-Sa 08:00-19:00,cuisine:coffee_shop,@id:node/3798702157,addr:street:Hermano Miguel,outdoor_seating:no,addr:city:Cuenca}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/3798702157</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0027917,-2.9022786],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >4</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Bar comida rápida,@id:node/4708439590,name:es:Bar comida rápida}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4708439590</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0044448,-2.8997021],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >16</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Stop Fries,@id:node/4394583290,name:es:Stop Fries}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4394583290</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0058274,-2.9009274],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >12</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Andre Fast Food,@id:node/3461589232,addr:street:Gran Colombia}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/3461589232</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0010412,-2.8968636],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >2</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Pizza XL,cuisine:pizza,@id:node/5811329953}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/5811329953</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0059756,-2.9006939],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >23</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:DONNER JANOS,@id:node/4357798897}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4357798897</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0074118,-2.8944476],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >10</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Heladería,@id:node/4730914826,name:es:Heladería}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4730914826</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0056654,-2.9013302],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >19</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Chicago Pizza,@id:node/1754653427}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/1754653427</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0061107,-2.8955377],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >1</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Picantes de Leo,name:en:Picantes de Leo,@id:node/4938870321,name:es:Picantes de Leo}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4938870321</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0035778,-2.8954761],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >21</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{addr:housenumber:6-57,amenity:fast_food,name:T-REX,opening_hours:24/7,cuisine:burger,@id:node/5346922721,addr:street:Benigno Malo}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/5346922721</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0052717,-2.8991352],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >22</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Empanada chilena la esquina,@id:node/4708436689,name:es:Empanada chilena la esquina}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4708436689</j.0:id>
-    <j.0:geometry>{coordinates:[-79.007348,-2.9021155],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >15</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Subway,cuisine:sandwich,@id:node/4827970121,name:es:Subway}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4827970121</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0048872,-2.8966774],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >20</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{wheelchair:no,internet_access:yes,phone:0969222269,amenity:fast_food,name:AAA+ Burguer &amp; wings,opening_hours:Mo-Fr 10:30-21:00, Sa 16:00-21:00,@id:node/4508877477,addr:street:Juan Jaramillo,email:mastrantorest@gmail.com}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4508877477</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0046092,-2.9000998],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >14</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{delivery:yes,website:https://www.facebook.com/CanaimaCuisine,amenity:fast_food,drive_through:no,smoking:no,name:Canaima,cuisine:international,description:Cocina Venezolana,@id:node/4059145560,addr:street:Tomás Ordoñez,takeaway:yes,addr:city:Cuenca}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4059145560</j.0:id>
-    <j.0:geometry>{coordinates:[-78.9996826,-2.9017325],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >6</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Papitas El BETO,@id:node/4365795089}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4365795089</j.0:id>
-    <j.0:geometry>{coordinates:[-78.9996462,-2.9022364],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >11</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Döner Janos,@id:node/4243162213}</j.0:properties>
-    <j.0:type>Feature</j.0:type>
-    <j.0:id>node/4243162213</j.0:id>
-    <j.0:geometry>{coordinates:[-79.001659,-2.8962691],type:Point}</j.0:geometry>
-    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >8</j.1:row>
-  </rdf:Description>
-  <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:perniles La patrona,@id:node/4249507191,addr:street:Presidente Córdova}</j.0:properties>
+    <j.0:properties>{amenity:fast_food,price:10,name:perniles La patrona,@id:node/4249507191,addr:street:Presidente Córdova}</j.0:properties>
     <j.0:type>Feature</j.0:type>
     <j.0:id>node/4249507191</j.0:id>
     <j.0:geometry>{coordinates:[-79.0056298,-2.898727],type:Point}</j.0:geometry>
@@ -163,7 +19,7 @@
     >9</j.1:row>
   </rdf:Description>
   <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Gara Hot Dog,@id:node/4394593889,name:es:La Parada}</j.0:properties>
+    <j.0:properties>{amenity:fast_food,price:5,name:Gara Hot Dog,@id:node/4394593889,name:es:La Parada}</j.0:properties>
     <j.0:type>Feature</j.0:type>
     <j.0:id>node/4394593889</j.0:id>
     <j.0:geometry>{coordinates:[-79.0057214,-2.9009839],type:Point}</j.0:geometry>
@@ -171,15 +27,39 @@
     >13</j.1:row>
   </rdf:Description>
   <rdf:Description>
-    <j.0:properties>{phone:0993628270,amenity:fast_food,name:Pizza y focaccia,name:it:Pizza y focaccia,opening_hours:Mo-Sa 11:30-23:00,cuisine:italian,@id:node/3665151512,addr:street:Presidente Córdova,addr:postcode:010101}</j.0:properties>
+    <j.0:properties>{wheelchair:no,internet_access:no,amenity:fast_food,internet_access:fee:no,cuisine:coffee_shop,addr:city:Cuenca,price:15,smoking:no,name:Ice Cream,opening_hours:Mo-Sa 08:00-19:00,@id:node/3798702157,addr:street:Hermano Miguel,outdoor_seating:no}</j.0:properties>
     <j.0:type>Feature</j.0:type>
-    <j.0:id>node/3665151512</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0033222,-2.8992792],type:Point}</j.0:geometry>
+    <j.0:id>node/3798702157</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0027917,-2.9022786],type:Point}</j.0:geometry>
     <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >3</j.1:row>
+    >4</j.1:row>
   </rdf:Description>
   <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Pizza XL,cuisine:pizza,@id:node/5811330253}</j.0:properties>
+    <j.0:properties>{amenity:fast_food,price:15,name:Picantes de Leo,name:en:Picantes de Leo,@id:node/4938870321,name:es:Picantes de Leo}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4938870321</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0035778,-2.8954761],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >21</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:10,name:Jack,@id:node/3895503259}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/3895503259</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0090286,-2.8967704],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >5</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:5,name:Q Papa,@id:node/4145414937,addr:street:Avenida 12 de Abril}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4145414937</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0104555,-2.8990868],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >7</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:25,name:Pizza XL,cuisine:pizza,@id:node/5811330253}</j.0:properties>
     <j.0:type>Feature</j.0:type>
     <j.0:id>node/5811330253</j.0:id>
     <j.0:geometry>{coordinates:[-79.0074516,-2.8999554],type:Point}</j.0:geometry>
@@ -187,11 +67,131 @@
     >24</j.1:row>
   </rdf:Description>
   <rdf:Description>
-    <j.0:properties>{amenity:fast_food,name:Jack,@id:node/3895503259}</j.0:properties>
+    <j.0:properties>{amenity:fast_food,price:10,name:Stop Fries,@id:node/4394583290,name:es:Stop Fries}</j.0:properties>
     <j.0:type>Feature</j.0:type>
-    <j.0:id>node/3895503259</j.0:id>
-    <j.0:geometry>{coordinates:[-79.0090286,-2.8967704],type:Point}</j.0:geometry>
+    <j.0:id>node/4394583290</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0058274,-2.9009274],type:Point}</j.0:geometry>
     <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
-    >5</j.1:row>
+    >12</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:20,name:Chicago Pizza,@id:node/1754653427}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/1754653427</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0061107,-2.8955377],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:12,name:Pizza XL,cuisine:pizza,@id:node/5811329953}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/5811329953</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0059756,-2.9006939],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >23</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:7,name:Papitas El BETO,@id:node/4365795089}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4365795089</j.0:id>
+    <j.0:geometry>{coordinates:[-78.9996462,-2.9022364],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >11</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:10,name:Empanada chilena la esquina,@id:node/4708436689,name:es:Empanada chilena la esquina}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4708436689</j.0:id>
+    <j.0:geometry>{coordinates:[-79.007348,-2.9021155],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >15</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:7,name:Yogur,@id:node/4715960990,addr:street:Benigno Malo,name:es:Yogur}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4715960990</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0053093,-2.8998103],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >17</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:5,name:Döner Janos,@id:node/4243162213}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4243162213</j.0:id>
+    <j.0:geometry>{coordinates:[-79.001659,-2.8962691],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >8</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:7,name:Bar comida rápida,@id:node/4708439590,name:es:Bar comida rápida}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4708439590</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0044448,-2.8997021],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >16</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:15,name:Andre Fast Food,@id:node/3461589232,addr:street:Gran Colombia}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/3461589232</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0010412,-2.8968636],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{addr:housenumber:6-57,amenity:fast_food,price:10,name:T-REX,opening_hours:24/7,cuisine:burger,@id:node/5346922721,addr:street:Benigno Malo}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/5346922721</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0052717,-2.8991352],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >22</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{wheelchair:no,internet_access:yes,phone:0969222269,amenity:fast_food,price:20,name:AAA+ Burguer &amp; wings,opening_hours:Mo-Fr 10:30-21:00, Sa 16:00-21:00,@id:node/4508877477,addr:street:Juan Jaramillo,email:mastrantorest@gmail.com}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4508877477</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0046092,-2.9000998],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >14</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{phone:0993628270,amenity:fast_food,price:10,name:Pizza y focaccia,name:it:Pizza y focaccia,opening_hours:Mo-Sa 11:30-23:00,cuisine:italian,@id:node/3665151512,addr:street:Presidente Córdova,addr:postcode:010101}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/3665151512</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0033222,-2.8992792],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:7,name:DONNER JANOS,@id:node/4357798897}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4357798897</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0074118,-2.8944476],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >10</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:5,name:Heladería,@id:node/4730914826,name:es:Heladería}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4730914826</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0056654,-2.9013302],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >19</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{amenity:fast_food,price:20,name:Subway,cuisine:sandwich,@id:node/4827970121,name:es:Subway}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4827970121</j.0:id>
+    <j.0:geometry>{coordinates:[-79.0048872,-2.8966774],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >20</j.1:row>
+  </rdf:Description>
+  <rdf:Description>
+    <j.0:properties>{delivery:yes,website:https://www.facebook.com/CanaimaCuisine,amenity:fast_food,cuisine:international,description:Cocina Venezolana,takeaway:yes,addr:city:Cuenca,drive_through:no,price:5,smoking:no,name:Canaima,@id:node/4059145560,addr:street:Tomás Ordoñez}</j.0:properties>
+    <j.0:type>Feature</j.0:type>
+    <j.0:id>node/4059145560</j.0:id>
+    <j.0:geometry>{coordinates:[-78.9996826,-2.9017325],type:Point}</j.0:geometry>
+    <j.1:row rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</j.1:row>
   </rdf:Description>
 </rdf:RDF>
