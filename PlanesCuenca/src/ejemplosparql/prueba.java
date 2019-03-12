@@ -155,7 +155,7 @@ public class prueba {
 	
 	public static void genera()
 	{
-		
+		//ejemplos
 //	 	OntModel m = getModel();
 //        loadData( m );
 //       
