@@ -52,5 +52,7 @@
 	<classpathentry kind="lib" path="src/resourcesfp/slf4j-log4j12-1.7.25.jar"/>
 	<classpathentry kind="lib" path="src/resourcesfp/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="src/resourcesfp/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/json-20160212.jar"/>
+	<classpathentry kind="lib" path="src/resourcesfp/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
