@@ -29,12 +29,39 @@ import cargaCSV.cargaCSVtoRDF;
 import org.apache.jena.util.FileManager;
 
 public class ProcesaOwl {
+	static String userdir= System.getProperty("user.dir");
 	
 	static String NS = "http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#";
 	
+	public static void cargaRdfRestaurants() {
+		OntModel model = null;	 
+		OntClass bares = null;
+		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
+		model.read(userdir+ "/src/recursos/ontologia_general.owl","RDF/XML"); 
+		 
+		System.out.println( "Clases/Instancias");
+		System.out.println( "=================");
+		ExtendedIterator iteratorClasses = model.listClasses(); 
+		while ( iteratorClasses.hasNext() ){
+		    OntClass ontClass = (OntClass) iteratorClasses.next();
+		    
+		    if(ontClass.getLocalName().equals("Restaurante"))
+		    {
+		    	 bares = ontClass;	
+		    }
+		    
+		    System.out.println( ontClass );		 
+		    ExtendedIterator iteratorInstances = ontClass.listInstances();
+		    while ( iteratorInstances.hasNext() ){
+		       System.out.println( "\t"+iteratorInstances.next() );
+		    }
+		    
+		}
+		
+	}
+	
 	public static void carga() {
 		
-		String userdir= System.getProperty("user.dir");
 		
 		OntModel model = null;	 
 		OntClass bares = null;
