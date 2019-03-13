@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.Individual;
@@ -91,12 +93,12 @@ public class ProcesaOwl {
 			Resource subject = stmt.getSubject(); // get the subject
 			Property predicate = stmt.getPredicate(); // get the predicate
 			RDFNode object = stmt.getObject(); // get the object
-
-			System.out.println(predicate.getLocalName());
+			System.out.println("..");
+			System.out.println("Localname " + predicate.getLocalName() + " ");
 			System.out.print(subject.toString());
-			System.out.print("predicado" + predicate.toString() + " ");
-			System.out.print("uri" + predicate.getURI() + " ");
-
+			System.out.print(" predicado " + predicate.toString() + " ");
+			System.out.print(" uri " + predicate.getURI() + " ");
+			System.out.println("..");
 			if (object instanceof Resource) {
 				valor = object.toString();
 				System.out.print("recurso " + object.toString());
@@ -105,22 +107,25 @@ public class ProcesaOwl {
 				valor = "\"" + object.toString() + "\"";
 				System.out.print("\"" + object.toString() + "\"");
 			}
+			if (predicate.getLocalName().compareTo("geometry") == 0) {
+				String[] internData = valor.split(",");
+				valorlatitud = internData[0].substring(internData[0].indexOf("[")+1, internData[0].length());
+				valorlongitud = internData[1].substring(0, internData[1].indexOf("]"));
+			}
 
-			switch (predicate.getLocalName()) {
-
-			case "Nombre":
-				nombrerecurso = object.toString().replace(" ", "").toUpperCase();
-				valornombre = valor.toString();
-				break;
-			case "Latitud":
-				valorlatitud = valor;
-				break;
-			case "Longitud":
-				valorlongitud = valor;
-				break;
-			case "Precio":
-				valorprecio = valor;
-				break;
+			if (predicate.getLocalName().compareTo("properties") == 0) {
+				String[] internData = valor.split(",");
+				for (String data : internData) {
+					if (data.contains("name:")) {
+						valornombre = data.substring(data.indexOf(":")+1, data.length());
+					}
+					if (data.contains("price:")) {
+						valorprecio = data.substring(data.indexOf(":")+1, data.length());
+					}
+					if (data.contains("id:node")) {
+						nombrerecurso = data.substring(data.indexOf("node/")+1, data.length());
+					}
+				}
 			}
 
 			int resto = contador % 14;
@@ -135,6 +140,23 @@ public class ProcesaOwl {
 			}
 
 		}
+		
+		 try
+	     {
+	     
+	   //Almacenamos la ontología en un fichero OWL (Opcional)
+	     File file = new File(userdir + "/src/recursos/ontologia_general_restaurantes.owl");
+	     //Hay que capturar las Excepciones
+	     if (!file.exists()){
+	          file.createNewFile();
+	     }
+	     model.write(new PrintWriter(file));
+	     
+	     }
+	     catch(Exception e)
+	     {
+	    	 
+	     }
 
 	}
 	
@@ -313,6 +335,7 @@ public class ProcesaOwl {
 	
 	public static void main(String[] args) 
 	{
-		carga();
+		cargaRdfRestaurants();
+		//carga();
 	}
 }
