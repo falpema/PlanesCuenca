@@ -81,30 +81,54 @@
     <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
   </owl:DatatypeProperty>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4059145560">
+    <ruta:longitud>-2.8998103</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</ruta:precio>
+    <ruta:latitud>-79.0053093</ruta:latitud>
+    <ruta:nombre>Canaima</ruta:nombre>
+  </ruta:Restaurant>
   <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4730914825">
-    <ruta:precio>7</ruta:precio>
+    <ruta:longitud>-2.9009274</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
     <ruta:latitud>-79.0058274</ruta:latitud>
     <ruta:nombre>es:Bar café}"</ruta:nombre>
   </ruta:Restaurant>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4249507191">
-    <ruta:precio>10</ruta:precio>
-    <ruta:latitud>-79.0056298</ruta:latitud>
-    <ruta:nombre>perniles La patrona</ruta:nombre>
-  </ruta:Restaurant>
   <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4827970121">
-    <ruta:precio>20</ruta:precio>
-    <ruta:latitud>-79.0090286</ruta:latitud>
+    <ruta:longitud>-2.8966774</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >20.0</ruta:precio>
+    <ruta:latitud>-79.0048872</ruta:latitud>
     <ruta:nombre>es:Subway}"</ruta:nombre>
   </ruta:Restaurant>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4357798897}&quot;">
-    <ruta:precio>7</ruta:precio>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4730914826">
+    <ruta:longitud>-2.9022786</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</ruta:precio>
     <ruta:latitud>-79.0027917</ruta:latitud>
-    <ruta:nombre>DONNER JANOS</ruta:nombre>
+    <ruta:nombre>es:Heladería}"</ruta:nombre>
   </ruta:Restaurant>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/5811330253}&quot;">
-    <ruta:precio>25</ruta:precio>
-    <ruta:latitud>-79.0074516</ruta:latitud>
-    <ruta:nombre>Pizza XL</ruta:nombre>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4708439590">
+    <ruta:longitud>-2.898727</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
+    <ruta:latitud>-79.0056298</ruta:latitud>
+    <ruta:nombre>es:Bar comida rápida}"</ruta:nombre>
+  </ruta:Restaurant>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4938870321">
+    <ruta:longitud>-2.9021155</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >15.0</ruta:precio>
+    <ruta:latitud>-79.007348</ruta:latitud>
+    <ruta:nombre>es:Picantes de Leo}"</ruta:nombre>
+  </ruta:Restaurant>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/3895503259}&quot;">
+    <ruta:longitud>-2.8967704</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >10.0</ruta:precio>
+    <ruta:latitud>-79.0090286</ruta:latitud>
+    <ruta:nombre>Jack</ruta:nombre>
   </ruta:Restaurant>
   <ruta:Ruta rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#r1">
     <ruta:nombre>Ruta Basica</ruta:nombre>
@@ -123,19 +147,11 @@
     </ruta:incluyeUnLugar>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </ruta:Ruta>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4508877477">
-    <ruta:precio>20</ruta:precio>
-    <ruta:latitud>-79.001659</ruta:latitud>
-    <ruta:nombre>AAA+ Burguer &amp; wings</ruta:nombre>
-  </ruta:Restaurant>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4145414937">
-    <ruta:precio>5</ruta:precio>
-    <ruta:latitud>-78.9996826</ruta:latitud>
-    <ruta:nombre>Q Papa</ruta:nombre>
-  </ruta:Restaurant>
-  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4394593889">
-    <ruta:precio>5</ruta:precio>
-    <ruta:latitud>-79.0010412</ruta:latitud>
-    <ruta:nombre>es:La Parada}"</ruta:nombre>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/5346922721">
+    <ruta:longitud>-2.9000998</ruta:longitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >10.0</ruta:precio>
+    <ruta:latitud>-79.0046092</ruta:latitud>
+    <ruta:nombre>T-REX</ruta:nombre>
   </ruta:Restaurant>
 </rdf:RDF>

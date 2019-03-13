@@ -71,7 +71,7 @@ public class ProcesaOwl {
 		DatatypeProperty latitud = model
 				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud");
 		DatatypeProperty longitud = model
-				.getDatatypeProperty("ttp://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
+				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
 
 		Model modelrdf = FileManager.get().loadModel(userdir + "/src/resourcesfp/restaurante.rdf", null, "RDF/XML");
 
@@ -134,8 +134,8 @@ public class ProcesaOwl {
 				instancia = model.createIndividual(NS + nombrerecurso, restaurant);
 				instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
 				instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
-				instancia.setPropertyValue(precio, model.createTypedLiteral(valorprecio));
-				// instancia.setPropertyValue(longitud,
+				instancia.setPropertyValue(precio,model.createTypedLiteral(Double.valueOf(valorprecio) ));//model.createTypedLiteral(valorprecio));
+				instancia.setPropertyValue(longitud,model.createTypedLiteral(valorlongitud));
 				// model.createTypedLiteral(valorlongitud));
 			}
 
@@ -151,7 +151,9 @@ public class ProcesaOwl {
 	          file.createNewFile();
 	     }
 	     model.write(new PrintWriter(file));
-	     
+	     System.out.println("===========================");
+	     System.out.println("CARGA CORRECTA DEL RDF DE RESTAURANTE EN OWL");
+	     System.out.println("===========================");
 	     }
 	     catch(Exception e)
 	     {
@@ -194,7 +196,7 @@ public class ProcesaOwl {
 		    
 		    DatatypeProperty latitud = model.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud");
 		    
-		    DatatypeProperty longitud = model.getDatatypeProperty("ttp://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
+		    DatatypeProperty longitud = model.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
 		    
 		    
 		    
@@ -263,7 +265,7 @@ public class ProcesaOwl {
 		 		instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
 		 		instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
 		 		instancia.setPropertyValue(precio, model.createTypedLiteral(valorprecio));
-		 		//instancia.setPropertyValue(longitud, model.createTypedLiteral(valorlongitud));
+		 		instancia.setPropertyValue(longitud, model.createTypedLiteral(valorlongitud));
 		 	  }
 		 	  
 		 	  
@@ -336,6 +338,6 @@ public class ProcesaOwl {
 	public static void main(String[] args) 
 	{
 		cargaRdfRestaurants();
-		//carga();
+		carga();
 	}
 }
