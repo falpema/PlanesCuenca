@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta"
+     xml:base="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ruta="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#seIncluye -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#seIncluye">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#tieneFloreria -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#tieneFloreria">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#descripcionservicios -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#descripcionservicios">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#direccion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#direccion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horafin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horafin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horainicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horainicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#precio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#precio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Apie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Apie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Horario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Horario"/>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#f1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#f1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+        <ruta:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Floreria Marquez</ruta:nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#r1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#r1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+        <ruta:tieneFloreria rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#f1"/>
+        <ruta:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruta basica</ruta:nombre>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+
