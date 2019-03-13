@@ -21,9 +21,12 @@ import org.apache.jena.util.FileManager;
 
 public class ProcesaOwl {
 	public static void carga() {
+		
+		String userdir= System.getProperty("user.dir");
+		
 		OntModel model = null;	 
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
-		model.read("/home/luis/workspace_otros/PlanesCuenca-master.zip_expanded/PlanesCuenca-master/PlanesCuenca/src/recursos/ontologia_ruta_final.owl","RDF/XML"); 
+		model.read(userdir+ "/src/recursos/ontologia_ruta_final.owl","RDF/XML"); 
 		 
 		System.out.println( "Clases/Instancias");
 		System.out.println( "=================");
