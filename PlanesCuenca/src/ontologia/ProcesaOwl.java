@@ -33,31 +33,109 @@ public class ProcesaOwl {
 	
 	static String NS = "http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#";
 	
+	/**
+	 * Method to load rdf of restaurants in ontology
+	 */
 	public static void cargaRdfRestaurants() {
-		OntModel model = null;	 
-		OntClass bares = null;
-		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
-		model.read(userdir+ "/src/recursos/ontologia_general.owl","RDF/XML"); 
-		 
-		System.out.println( "Clases/Instancias");
-		System.out.println( "=================");
-		ExtendedIterator iteratorClasses = model.listClasses(); 
-		while ( iteratorClasses.hasNext() ){
-		    OntClass ontClass = (OntClass) iteratorClasses.next();
-		    
-		    if(ontClass.getLocalName().equals("Restaurante"))
-		    {
-		    	 bares = ontClass;	
-		    }
-		    
-		    System.out.println( ontClass );		 
-		    ExtendedIterator iteratorInstances = ontClass.listInstances();
-		    while ( iteratorInstances.hasNext() ){
-		       System.out.println( "\t"+iteratorInstances.next() );
-		    }
-		    
+		OntModel model = null;
+		OntClass restaurant = null;
+		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		model.read(userdir + "/src/recursos/ontologia_general.owl", "RDF/XML");
+
+		System.out.println("Clases/Instancias");
+		System.out.println("=================");
+		ExtendedIterator iteratorClasses = model.listClasses();
+		while (iteratorClasses.hasNext()) {
+			OntClass ontClass = (OntClass) iteratorClasses.next();
+
+			if (ontClass.getLocalName().equals("Restaurant")) {
+				restaurant = ontClass;
+			}
+
+			System.out.println(ontClass);
+			ExtendedIterator iteratorInstances = ontClass.listInstances();
+			while (iteratorInstances.hasNext()) {
+				System.out.println("\t" + iteratorInstances.next());
+			}
+
 		}
-		
+
+		System.out.println("");
+
+		DatatypeProperty nombre = model
+				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#nombre");
+		DatatypeProperty precio = model
+				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#precio");
+		DatatypeProperty latitud = model
+				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud");
+		DatatypeProperty longitud = model
+				.getDatatypeProperty("ttp://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
+
+		Model modelrdf = FileManager.get().loadModel(userdir + "/src/resourcesfp/restaurante.rdf", null, "RDF/XML");
+
+		StmtIterator iter = modelrdf.listStatements();
+
+		Integer contador = 0;
+		String valor = "";
+		String valorlatitud = "";
+		String valorlongitud = "";
+		String valorprecio = "";
+		String valornombre = "";
+		String nombrerecurso = "Restaurant";
+
+		Individual instancia = null;
+		while (iter.hasNext()) {
+
+			contador++;
+			Statement stmt = iter.nextStatement(); // get next statement
+			Resource subject = stmt.getSubject(); // get the subject
+			Property predicate = stmt.getPredicate(); // get the predicate
+			RDFNode object = stmt.getObject(); // get the object
+
+			System.out.println(predicate.getLocalName());
+			System.out.print(subject.toString());
+			System.out.print("predicado" + predicate.toString() + " ");
+			System.out.print("uri" + predicate.getURI() + " ");
+
+			if (object instanceof Resource) {
+				valor = object.toString();
+				System.out.print("recurso " + object.toString());
+			} else {
+				// object is a literal
+				valor = "\"" + object.toString() + "\"";
+				System.out.print("\"" + object.toString() + "\"");
+			}
+
+			switch (predicate.getLocalName()) {
+
+			case "Nombre":
+				nombrerecurso = object.toString().replace(" ", "").toUpperCase();
+				valornombre = valor.toString();
+				break;
+			case "Latitud":
+				valorlatitud = valor;
+				break;
+			case "Longitud":
+				valorlongitud = valor;
+				break;
+			case "Precio":
+				valorprecio = valor;
+				break;
+			}
+
+			int resto = contador % 14;
+
+			if (resto == 0) {
+				instancia = model.createIndividual(NS + nombrerecurso, restaurant);
+				instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
+				instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
+				instancia.setPropertyValue(precio, model.createTypedLiteral(valorprecio));
+				// instancia.setPropertyValue(longitud,
+				// model.createTypedLiteral(valorlongitud));
+			}
+
+		}
+
 	}
 	
 	public static void carga() {
