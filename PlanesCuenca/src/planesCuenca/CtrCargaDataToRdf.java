@@ -48,7 +48,7 @@ import ontologia.ProcesaOwl;
 public class CtrCargaDataToRdf {
 	
 	public static void main(String[] args) {
-		CargarRdfRestaurantes();
+		createandLoadOWLfromData();
 }
 	
 	
@@ -62,7 +62,7 @@ public class CtrCargaDataToRdf {
 		this.titulo = titulo;
 	}
 	
-	public static void CargarRdfRestaurantes(){
+	public static void createandLoadOWLfromData(){
 		 String resp = json2rdf() ;//crear el rdf restaurantes a partir del geojson
 		 cargaCSVtoRDF.ejecutarCSV(); // crea rdf bares desde csv
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se completo la creacion de Rdfs de fuentes heterogeneas."));
@@ -70,6 +70,7 @@ public class CtrCargaDataToRdf {
 		 ProcesaOwl.cargaRdfRestaurants();
 		 ProcesaOwl.carga();
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar Rdfs en Ontologica correcta."));
+		 System.out.println("ontologia cargada en resources/ontologia_general_cargada.owl");
 	}
 	
 	/**

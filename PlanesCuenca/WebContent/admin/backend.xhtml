@@ -32,11 +32,11 @@
 				<div class="EmptyBox5"></div>
 				<h:panelGrid id="grid" columns="2" cellpadding="5">
 
-					<h:outputText  value="Cargar Datos Restarante:"  style="float:right; font-style: italic" />
+					<h:outputText  value="Cargar Datos -> RDF -> OWL:"  style="float:right; font-style: italic" />
 
 					<p:commandButton process="@form" ajax="false"
-						action="#{ctrCargaDataToRdf.CargarRdfRestaurantes}"
-						value="Cargar Datos Rdf restaurantes" update="grid" />
+						action="#{ctrCargaDataToRdf.createandLoadOWLfromData}"
+						value="Cargar Datos Rdf restaurantes, bares en OWL" update="grid" />
 
 				</h:panelGrid>
 
