@@ -9,6 +9,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.*;
@@ -23,8 +27,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
 import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 //import org.json.simple.parser.ParseException;
 import org.json.simple.parser.ParseException;
+import org.primefaces.push.inject.ServletContextInjectable;
 
 import cargaCSV.cargaCSVtoRDF;
 
@@ -56,11 +62,15 @@ public class CtrCargaDataToRdf {
 	}
 	
 	public static void CargarRdfRestaurantes(){
-		 String resp = json2rdf() ;//cargarGsonToRdf();
-		
+		 String resp = json2rdf() ;//crear el rdf a partir del geojson
+		 cargaCSVtoRDF.ejecutarCSV();
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar de Datos correcta."));
 	}
 	
+	/**
+	 * Crear el rdf a partir del geojson	 * falpema
+	 * @return
+	 */
 	private static String json2rdf() {
 		String resp = "fail";
 		JSONParser parser = new JSONParser();
@@ -70,15 +80,28 @@ public class CtrCargaDataToRdf {
 		  System.out.println("Working Directory = " + userdir
 	              );
 		  ///Users/macbookpro/git/PlanesCuenca/PlanesCuenca/src/resourcesfp
+		  Path p = Paths.get("resources/datosRestaurantesCuenca.geojson");
+		  InputStream res =
+				    CtrCargaDataToRdf.class.getResourceAsStream("/datosRestaurantesCuenca.geojson");
+		  System.out.println(p.toString());
+		  
+		  try {
+			System.out.println(CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath());
+		} catch (URISyntaxException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		  
+		  
 		try {
-			Object obj = parser.parse(new FileReader(
-					userdir+ "/src/resourcesfp/datosRestaurantesCuenca.geojson"));
-			
+			Object obj = parser.parse(new FileReader(CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath()));
+			userdir = CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/")) ;
+			System.out.println(userdir);
 			//parse csv
 		  	 output = new JSONObject(obj.toString());
 		       JSONArray docs = output.getJSONArray("features");
 		
-	            File file=new File(userdir+ "/src/resourcesfp/tmprestaurants.csv");
+	            File file=new File(userdir+ "/tmprestaurants.csv");
 	            String csv = CDL.toString(docs);
 	            FileUtils.writeStringToFile(file, csv);
 	            cargarGsonToRdf();
@@ -104,17 +127,24 @@ public class CtrCargaDataToRdf {
 	}
 
 	private static String cargarGsonToRdf() {
-		String userdir= System.getProperty("user.dir");
+		String userdir="";
+		try {
+			userdir = CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, CtrCargaDataToRdf.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+		} catch (URISyntaxException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		}
+		
 		String resp = "";
 
 		CSV2RDF.init();// Initialise the CSV conversion engine in Jena
 
 		Model model = ModelFactory.createDefaultModel();
 
-		//model.read(userdir+ "/src/resourcesfp/tmprestaurants.csv",
+		//model.read(userdir+ "/tmprestaurants.csv",
 		//		"http://maestriageti/restaurantecuenca", "csv");
 		///recursos/datossemanticabares.csv"
-		File initialFile = new File(userdir+ "/src/resourcesfp/tmprestaurants.csv");
+		File initialFile = new File(userdir+ "/tmprestaurants.csv");
 	    InputStream targetStream = null;
 		try {
 			targetStream = new FileInputStream(initialFile);
@@ -127,7 +157,7 @@ public class CtrCargaDataToRdf {
 
 		try {
 
-			FileWriter out = new FileWriter(userdir+ "/src/resourcesfp/restaurante.rdf");
+			FileWriter out = new FileWriter(userdir+ "/restaurante.rdf");
 
 			model.write(out, "RDFXML");
 
@@ -139,9 +169,9 @@ public class CtrCargaDataToRdf {
 
 		}
 
-		File output = new File(userdir+ "/src/resourcesfp/restaurante.rdf");
+		File output = new File(userdir+ "/restaurante.rdf");
 
-		File tempFile = new File(userdir+ "/src/resourcesfp/temp.nt");
+		File tempFile = new File(userdir+ "/temp.nt");
 
 		BufferedReader reader = null;
 
@@ -150,10 +180,10 @@ public class CtrCargaDataToRdf {
 		try {
 
 			reader = new BufferedReader(
-					new FileReader(userdir+ "/src/resourcesfp/restaurante.rdf"));
+					new FileReader(userdir+ "/restaurante.rdf"));
 
 			writer = new BufferedWriter(
-					new FileWriter(userdir+ "/src/resourcesfp/temp.nt"));
+					new FileWriter(userdir+ "/temp.nt"));
 
 			String currentLine;
 
@@ -205,8 +235,8 @@ public class CtrCargaDataToRdf {
 
 		}
 
-		System.out.println("Termino de realizar la carga rdf restaurante");
-		resp="Termino de realizar la carga rdf restaurante";
+		System.out.println("Termino de realizar la carga rdf restaurante en "+userdir+ "/restaurante.rdf");
+		resp="Termino de realizar la carga rdf restaurante "+ userdir+ "/restaurante.rdf";
 		return resp;
 	}
 
