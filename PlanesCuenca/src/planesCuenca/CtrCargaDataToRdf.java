@@ -33,6 +33,7 @@ import org.json.simple.parser.ParseException;
 import org.primefaces.push.inject.ServletContextInjectable;
 
 import cargaCSV.cargaCSVtoRDF;
+import ontologia.ProcesaOwl;
 
 
 
@@ -62,9 +63,13 @@ public class CtrCargaDataToRdf {
 	}
 	
 	public static void CargarRdfRestaurantes(){
-		 String resp = json2rdf() ;//crear el rdf a partir del geojson
-		 cargaCSVtoRDF.ejecutarCSV();
-		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar de Datos correcta."));
+		 String resp = json2rdf() ;//crear el rdf restaurantes a partir del geojson
+		 cargaCSVtoRDF.ejecutarCSV(); // crea rdf bares desde csv
+		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se completo la creacion de Rdfs de fuentes heterogeneas."));
+
+		 ProcesaOwl.cargaRdfRestaurants();
+		 ProcesaOwl.carga();
+		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar Rdfs en Ontologica correcta."));
 	}
 	
 	/**

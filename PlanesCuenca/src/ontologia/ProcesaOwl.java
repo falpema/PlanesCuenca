@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,10 +40,17 @@ public class ProcesaOwl {
 	 * Method to load rdf of restaurants in ontology
 	 */
 	public static void cargaRdfRestaurants() {
+		try {
+			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+		} catch (URISyntaxException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
 		OntModel model = null;
 		OntClass restaurant = null;
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-		model.read(userdir + "/src/recursos/ontologia_general.owl", "RDF/XML");
+		model.read(userdir + "/ontologia_general.owl", "RDF/XML");
 
 		System.out.println("Clases/Instancias");
 		System.out.println("=================");
@@ -73,7 +81,7 @@ public class ProcesaOwl {
 		DatatypeProperty longitud = model
 				.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");
 
-		Model modelrdf = FileManager.get().loadModel(userdir + "/src/resourcesfp/restaurante.rdf", null, "RDF/XML");
+		Model modelrdf = FileManager.get().loadModel(userdir + "/restaurante.rdf", null, "RDF/XML");
 
 		StmtIterator iter = modelrdf.listStatements();
 
@@ -145,7 +153,7 @@ public class ProcesaOwl {
 	     {
 	     
 	   //Almacenamos la ontología en un fichero OWL (Opcional)
-	     File file = new File(userdir + "/src/recursos/ontologia_general_restaurantes.owl");
+	     File file = new File(userdir + "/ontologia_general_cargada.owl");
 	     //Hay que capturar las Excepciones
 	     if (!file.exists()){
 	          file.createNewFile();
@@ -163,12 +171,16 @@ public class ProcesaOwl {
 	}
 	
 	public static void carga() {
-		
-		
+	try {	
+		userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+	} catch (URISyntaxException e3) {
+		// TODO Auto-generated catch block
+		e3.printStackTrace();
+	}
 		OntModel model = null;	 
 		OntClass bares = null;
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
-		model.read(userdir+ "/src/recursos/ontologia_general.owl","RDF/XML"); 
+		model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
 		 
 		System.out.println( "Clases/Instancias");
 		System.out.println( "=================");
@@ -200,7 +212,7 @@ public class ProcesaOwl {
 		    
 		    
 		    
-		    Model modelrdf = FileManager.get().loadModel("/home/tatymunoz/Documentos/resultado.rdf", null, "RDF/XML");
+		    Model modelrdf = FileManager.get().loadModel(userdir+ "/discoteca.rdf", null, "RDF/XML");
 		 	
 		    StmtIterator iter = modelrdf.listStatements();
 		 	
@@ -277,7 +289,7 @@ public class ProcesaOwl {
 		     {
 		     
 		   //Almacenamos la ontología en un fichero OWL (Opcional)
-		     File file = new File("/home/tatymunoz/Documentos/ONTOLOGIA/Animales3.owl");
+		     File file = new File(userdir+ "/ontologia_general_cargada.owl");
 		     //Hay que capturar las Excepciones
 		     if (!file.exists()){
 		          file.createNewFile();
