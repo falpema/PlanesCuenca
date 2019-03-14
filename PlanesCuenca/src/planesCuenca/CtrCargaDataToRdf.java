@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
 import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
 import org.json.simple.parser.ParseException;
 
 import cargaCSV.cargaCSVtoRDF;
@@ -91,10 +92,10 @@ public class CtrCargaDataToRdf {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 		
 
 	return resp;
