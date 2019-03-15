@@ -1,0 +1,247 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ruta="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Apie">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Horario"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#tieneFloreria">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#incluyeUnLugar">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#descripcionservicios">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Coordenadas"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#direccion">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Localizacion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#telefono">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#precio">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Servicios"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#nombre">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horafin">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#horainicio">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Discoteca"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Restaurant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/3665151512">
+    <ruta:nombre>it:Pizza y focaccia</ruta:nombre>
+    <ruta:latitud>-79.0027917</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >10.0</ruta:precio>
+    <ruta:longitud>-2.9022786</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4059145560">
+    <ruta:nombre>Canaima</ruta:nombre>
+    <ruta:latitud>-79.0058274</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</ruta:precio>
+    <ruta:longitud>-2.9009274</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4365795089}&quot;">
+    <ruta:nombre>Papitas El BETO</ruta:nombre>
+    <ruta:latitud>-79.0057214</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
+    <ruta:longitud>-2.9009839</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#LAMESASALSAYSON">
+    <ruta:longitud>"-78.999121^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"5^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.896881^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"La Mesa Salsa Y Son"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#AÑOS80S">
+    <ruta:longitud>"-79.004923^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"5^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.906106^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Años 80s"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#VERDEPINTONYMADURO">
+    <ruta:longitud>"-79.003771^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"10^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.900089^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Verde Pinton y Maduro"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#BARZARUMA">
+    <ruta:longitud>"-79.002912^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"3^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.901387^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Bar Zaruma"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4357798897}&quot;">
+    <ruta:nombre>DONNER JANOS</ruta:nombre>
+    <ruta:latitud>-79.0074118</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
+    <ruta:longitud>-2.8944476</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#BEERHOUSE">
+    <ruta:longitud>"-79.003733^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"3^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.901124^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Beer House"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#INDIGOBAR">
+    <ruta:longitud>"-79.003157^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"3^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.898518^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Indigo Bar"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#NIDDIAFUZZIONPARTY">
+    <ruta:longitud>"-79.003649^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"5^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.901804^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Niddia Fuzzion Party"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#PACORTARSELASVENAS">
+    <ruta:longitud>"-79.002428^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"10^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.905338^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Pa Cortarse las venas"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#GOLDENPRAGECLUB">
+    <ruta:longitud>"-79.003361^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"5^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.906510^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Golden Prage Club"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4708439590">
+    <ruta:nombre>es:Bar comida rápida}"</ruta:nombre>
+    <ruta:latitud>-79.0059756</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
+    <ruta:longitud>-2.9006939</ruta:longitud>
+  </ruta:Restaurant>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#r1">
+    <ruta:incluyeUnLugar>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#l1">
+        <ruta:tieneFloreria>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#f1">
+            <ruta:direccion>Ave Remigio Crespo Toral, Cuenca 010107</ruta:direccion>
+            <ruta:nombre>Flor Persa</ruta:nombre>
+            <rdf:type rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Floreria"/>
+          </owl:NamedIndividual>
+        </ruta:tieneFloreria>
+        <ruta:nombre>Lugar B1</ruta:nombre>
+        <rdf:type rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Lugar"/>
+      </owl:NamedIndividual>
+    </ruta:incluyeUnLugar>
+    <ruta:nombre>Ruta Basica</ruta:nombre>
+    <rdf:type rdf:resource="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#Ruta"/>
+  </owl:NamedIndividual>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#GOZAESPRESSOBAR">
+    <ruta:longitud>"-79.003942^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"15^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.901350,"</ruta:latitud>
+    <ruta:nombre>"Goza Espresso Bar"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#LOLA’S">
+    <ruta:longitud>"-79.001918^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"20^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.904754^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Lola’s"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#PAROLA">
+    <ruta:longitud>"-79.002893^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"15^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.902239^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Parola"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#SAFARI">
+    <ruta:longitud>"-79.013942^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"3^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.902557^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Safari"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4715960990">
+    <ruta:nombre>es:Yogur}"</ruta:nombre>
+    <ruta:latitud>-79.0090286</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</ruta:precio>
+    <ruta:longitud>-2.8967704</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4145414937">
+    <ruta:nombre>Q Papa</ruta:nombre>
+    <ruta:latitud>-79.0104555</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</ruta:precio>
+    <ruta:longitud>-2.8990868</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#LIRONLIRON">
+    <ruta:longitud>"-79.005071^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"5^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.895452^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Liron Liron"</ruta:nombre>
+  </ruta:Discoteca>
+  <ruta:Restaurant rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ode/4243162213}&quot;">
+    <ruta:nombre>Döner Janos</ruta:nombre>
+    <ruta:latitud>-79.0061107</ruta:latitud>
+    <ruta:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</ruta:precio>
+    <ruta:longitud>-2.8955377</ruta:longitud>
+  </ruta:Restaurant>
+  <ruta:Discoteca rdf:about="http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#ROLINGS">
+    <ruta:longitud>"-79.001842^^http://www.w3.org/2001/XMLSchema#double"</ruta:longitud>
+    <ruta:precio>"10^^http://www.w3.org/2001/XMLSchema#double"</ruta:precio>
+    <ruta:latitud>"-2.904725^^http://www.w3.org/2001/XMLSchema#double"</ruta:latitud>
+    <ruta:nombre>"Rolings"</ruta:nombre>
+  </ruta:Discoteca>
+</rdf:RDF>

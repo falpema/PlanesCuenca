@@ -6,7 +6,9 @@ package cargaCSV;
 import java.math.BigDecimal;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import org.primefaces.context.RequestContext;
@@ -119,11 +121,12 @@ import org.primefaces.model.map.Marker;
 	    
 	    public void testButtonAction(ActionEvent event) 
 	    {
+
 	    	
 	    //generarPlanOntologia(this.presupuesto);
 	    	
 	    	
-	    	//System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
+	    	System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
 	       // return "anotherPage.xhtml";
 	        
 	    	// create OntModel
@@ -133,6 +136,8 @@ import org.primefaces.model.map.Marker;
 //			// start traverse
 //			traverseStart( model, null );
 	        
+			 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
+
 	        
 	    }
 	    

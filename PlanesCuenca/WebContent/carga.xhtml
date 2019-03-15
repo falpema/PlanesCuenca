@@ -61,6 +61,9 @@
         </style>
     </h:head>
     <h:body>
+    <h1>Bienvenido a Planes Cuenca</h1>
+    
+    <h2>Por favor ingrese su ubicacion y su presupuesto</h2>
         <h:form id="formapas" style="height: 100%">
         
         
@@ -74,12 +77,14 @@
         
         <div>
         	<p:outputLabel>Ingrese el presupuesto</p:outputLabel>
-        	<p:inputText value="#{googleMapView.presupuesto}" ></p:inputText>
+        	<p:inputText value="#{googleMapView.presupuesto}"  required="true" validatorMessage="Ingrese el Presupuesto Por Favor"></p:inputText>
         </div>
         <div>
-         	
-        	<p:commandButton actionListener="#{googleMapView.testButtonAction}" label="Generar Plan" />
-        	
+         
+        	<p:commandButton actionListener="#{googleMapView.testButtonAction}" label="Generar Plan" value = "Generar Plan" />
+        	 	<!-- 	<p:commandButton process="@form" ajax="false"
+						action="#{ctrConsultarPlan.consultarPlan()}"
+						value="Generar Plan" update="grid" /> -->
         </div>
         </h:form>   
     </h:body>
