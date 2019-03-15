@@ -154,7 +154,7 @@ import pojos.Resultado;
 	        
 	        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
 	        
-	       // CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
+	        CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
 	    	// create OntModel
 //			OntModel model = ModelFactory.createOntologyModel();
 //			// read camera ontology
