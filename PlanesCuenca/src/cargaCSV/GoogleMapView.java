@@ -34,7 +34,7 @@ import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
 
-import planesCuenca.CtrConsultarPlan;
+//import planesCuenca.CtrConsultarPlan;
 import pojos.Resultado;
 
 @ManagedBean(name="googleMapView")
@@ -157,8 +157,8 @@ import pojos.Resultado;
 	        
 	        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
 	        
-	        CtrConsultarPlan  cp = new CtrConsultarPlan();
-	        cp.consultarPlan(presupuesto, latitud, longitud);
+	       // CtrConsultarPlan  cp = new CtrConsultarPlan();
+	       // cp.consultarPlan(presupuesto, latitud, longitud);
 	    	// create OntModel
 //			OntModel model = ModelFactory.createOntologyModel();
 //			// read camera ontology
