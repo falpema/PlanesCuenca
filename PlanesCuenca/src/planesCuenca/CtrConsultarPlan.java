@@ -1,5 +1,7 @@
 package planesCuenca;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -32,6 +34,52 @@ import pojos.Resultado;
 @ViewScoped
 public class CtrConsultarPlan {
 	private transient  List<Resultado> resultado= new java.util.ArrayList<>();
+	private String openSparql  = "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
+            "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
+            "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
+            "SELECT * { { " +
+            "select ?precio ?longitud ?latitud "+ //?latitud 
+            "where { "
+            + "?dataP rdf:type ns:Discoteca . "
+            + "?dataP ns:nombre ?precio .  "
+           // + "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
+           // + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
+           		 + "?dataP ns:longitud ?longitud   ."
+           		 + "?dataP ns:latitud ?latitud   ."
+            + " }  } " 
+			 + " UNION { "
+		    + "select ?precio ?longitud ?latitud  "+  //?latitud 
+            "where { "
+            + "?dataP rdf:type ns:Restaurant . "
+            + "?dataP ns:nombre ?precio .  "
+            //+ "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
+          //  + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
+       	 + "?dataP ns:longitud ?longitud   ."
+       	+ "?dataP ns:latitud ?latitud   ."
+            + "} } } ";
+	private String respOpenSparql = "" ;
+	
+	
+	public String getOpenSparql() {
+		return openSparql;
+	}
+
+
+	public void setOpenSparql(String openSparql) {
+		this.openSparql = openSparql;
+	}
+
+
+	public String getRespOpenSparql() {
+		return respOpenSparql;
+	}
+
+
+	public void setRespOpenSparql(String respOpenSparql) {
+		this.respOpenSparql = respOpenSparql;
+	}
+
+
 	public  void consultarPlan(	BigDecimal presupuesto,Double latitud, Double longitud){
 	 String userdir = "";
 		try {	
@@ -92,5 +140,48 @@ public class CtrConsultarPlan {
 		requestContext.update("forresultado:listado");
 		RequestContext.getCurrentInstance().execute("window.open('resultado.xhtml')");
 	}
+	
+	
+	/**
+	 * Consultas libres desde sparql
+	 */
+	public  void consultarSparql(){
+		 String userdir = "";
+			try {	
+				userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+			} catch (URISyntaxException e3) {
+				// TODO Auto-generated catch block
+				e3.printStackTrace();
+			}
+				
+				OntModel model;
+				
+				model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
+				model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
+				
+
+			        
+				System.out.println(openSparql);
+				
+
+				
+				Query query = QueryFactory.create(openSparql);		 
+				// Ejecutar la consulta y obtener los resultados
+				QueryExecution qe = QueryExecutionFactory.create(query, model);		 
+				try {
+				   ResultSet results = qe.execSelect();
+				 
+				  // OutputStream oi = System.out;
+				   respOpenSparql = ResultSetFormatter.asText(results);
+				   ResultSetFormatter.out(System.out, results, query) ;
+			//	ResultSetFormatter.out(oi, results, query) ;
+				//respOpenSparql=oi.toString();
+				   
+				} finally { qe.close() ; }
+			
+			//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
+			
+
+		}
 
 }
