@@ -1,15 +1,56 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-    </h:head>
-    <h:body>
-        <h:form id="forresultado" style="height: 100%">
-        
-        </h:form>   
-    </h:body>
-   </html>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="forresultado" style="height: 100%">
+
+		<h3 style="margin-top: 0">RESULTADO POR PRECIOS:</h3>
+
+		<div prefix="
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  foaf: http://xmlns.com/foaf/0.1/
+  gr: http://purl.org/goodrelations/v1#
+  xsd: http://www.w3.org/2001/XMLSchema#">
+			<div>
+			<p:dataList id="listado" value="#{googleMapView.resultado}" var="productos" type="ordered">
+				<div typeof="gr:BusinessEntity">
+					<h1><span property="gr:name">#{productos.nombre}</span> </h1>
+					<p property="gr:description">The Canon Rebel T2i (EOS 550D) is
+						Cannon's top-of-the-line consumer digital SLR camera. It can shoot
+						up to 18 megapixel resolution photos and features an ISO range of
+						100-6400.</p>
+					Contact Details:
+					<div rel="s:address">
+						Main address:
+						<div typeof="s:PostalAddress">
+							<span property="s:streetAddress">Bagel Street 1234</span> <span
+								property="s:addressLocality">Cuenca</span>
+						</div>
+					</div>
+					Tel:<span property="s:telephone">+49-89-12345678-0</span>, E-mail:
+					<span property="s:email">contact@example.org</span>
+					<div rel="foaf:page" href="http://www.acme-bagels.com/"></div>
+					<span property="gr:hasPriceSpecification"
+						typeof="gr:UnitPriceSpecification"> <span
+						property="gr:hasCurrency" content="USD">$</span> <span
+						property="gr:hasCurrencyValue" datatype="xsd:float">899</span>
+					</span> Localizacion:
+					<div rel="s:GeoCoordinates">
+						<span property="s:latitude" content="45.75">-778</span> 
+						<span property="s:longitude" content="49.98"> -7878</span>
+					</div>
+
+				</div>
+		     </p:dataList>
+
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

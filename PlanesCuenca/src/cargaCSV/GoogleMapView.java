@@ -2,15 +2,30 @@ package cargaCSV;
 
 
 
-	import java.io.Serializable;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.net.URISyntaxException;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.map.PointSelectEvent;
 import org.primefaces.model.map.DefaultMapModel;
@@ -19,9 +34,13 @@ import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
 
 import planesCuenca.CtrConsultarPlan;
+import pojos.Resultado;
 
-	@ManagedBean
+@ManagedBean(name="googleMapView")
+@ApplicationScoped
 	public class GoogleMapView implements Serializable {
+		
+		private transient  List<Resultado> resultado= new java.util.ArrayList<>();
 		
 		private BigDecimal presupuesto;
 
@@ -135,7 +154,7 @@ import planesCuenca.CtrConsultarPlan;
 	        
 	        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
 	        
-	        CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
+	       // CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
 	    	// create OntModel
 //			OntModel model = ModelFactory.createOntologyModel();
 //			// read camera ontology
@@ -149,7 +168,89 @@ import planesCuenca.CtrConsultarPlan;
 	    }
 	    
 	    
-	    
+	    public void ConsultaPorPrecio()
+		{
+		
+	    	 String userdir = "";
+	 		try {	
+	 			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+	 		} catch (URISyntaxException e3) {
+	 			// TODO Auto-generated catch block
+	 			e3.printStackTrace();
+	 		}
+	 			
+	 			OntModel model;
+	 			System.out.println(userdir);
+	 			model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
+	 			model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
+			    Consulta(model);
+		}
+		
+		public void Consulta(OntModel model) {
+		
+			
+			String SparQlIndividual=
+		    	     "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
+		             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
+		             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
+		             "SELECT * { { " +
+		             "select ?precio "+
+		             "where { "
+		             + "?dataP rdf:type ns:Discoteca . "
+		             + "?dataP ns:nombre ?precio . }  } " 
+		             + " UNION { "
+					 + "SELECT ?precio  "
+					 + "WHERE  "
+					 + "{  "
+			         + "   ns:r1 ns:tieneFloreria ?nombre. "
+			         + "   ?nombre ns:nombre ?precio "
+			         + "} } }";	
+		        
+			
+			
+			Query query = QueryFactory.create(SparQlIndividual);		 
+			// Ejecutar la consulta y obtener los resultados
+			QueryExecution qe = QueryExecutionFactory.create(query, model);		 
+			try {
+			 	
+			   ResultSet results = qe.execSelect();
+			   ResultSetFormatter.out(System.out, results, query) ;
+			   while (results.hasNext()) {
+			  QuerySolution qs = results.next();
+			   Resultado result=new Resultado(qs.getLiteral("precio").toString(),"dd","bb");
+			   resultado.add(result);
+			   }
+			} 
+			finally 
+			{ 
+				qe.close() ; 
+			}
+			//forresultado
+			
+			   
+			RequestContext requestContext = RequestContext.getCurrentInstance();
+			requestContext.update("forresultado:listado");
+			RequestContext.getCurrentInstance().execute("window.open('resultado.xhtml')");
+			
+//			ExternalContext ec = FacesContext.getCurrentInstance()
+//			        .getExternalContext();
+//			try {
+//			    ec.redirect(ec.getRequestContextPath()
+//			            + "/resultado.xhtml");
+//			} catch (IOException e) {
+//			    // TODO Auto-generated catch block
+//			    e.printStackTrace();
+//			}
+			
+		}
+
+		public List<Resultado> getResultado() {
+			return resultado;
+		}
+
+		public void setResultado(List<Resultado> resultado) {
+			this.resultado = resultado;
+		}
 	    
 	    	    
 	}
