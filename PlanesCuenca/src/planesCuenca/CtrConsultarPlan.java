@@ -56,9 +56,11 @@ public class CtrConsultarPlan {
 		             "where { "
 		             + "?dataP rdf:type ns:Restaurant . "
 		             + "?dataP ns:nombre ?precio . } "
-			         + "} } }";	
+			         + "} } ";	
 		        
 			
+			
+
 			
 			Query query = QueryFactory.create(SparQlIndividual);		 
 			// Ejecutar la consulta y obtener los resultados
