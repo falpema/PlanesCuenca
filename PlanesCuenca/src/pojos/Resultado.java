@@ -7,6 +7,14 @@ public class Resultado {
     public String precio;
     
 
+    
+    
+    
+	public Resultado(String nombre, String precio) {
+		super();
+		this.nombre = nombre;
+		this.precio = precio;
+	}
 
 	public Resultado(String nombre, String direccion, String precio) {
 		super();

@@ -32,7 +32,7 @@ import pojos.Resultado;
 @ViewScoped
 public class CtrConsultarPlan {
 	private transient  List<Resultado> resultado= new java.util.ArrayList<>();
-	public  void consultarPlan(	BigDecimal presupuesto,Double latitud, Double longitud){
+	public  void consultarPlan(	Double presupuesto,Double latitud, Double longitud){
 	 String userdir = "";
 		try {	
 			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));

@@ -18,6 +18,7 @@ import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -112,6 +113,7 @@ public class ProcesaOwl {
 				System.out.print("recurso " + object.toString());
 			} else {
 				// object is a literal
+				
 				valor = "\"" + object.toString() + "\"";
 				System.out.print("\"" + object.toString() + "\"");
 			}
@@ -245,8 +247,9 @@ public class ProcesaOwl {
 		 	    	valor=object.toString();
 		 	       System.out.print("recurso "+object.toString());
 		 	    } else {
-		 	        // object is a literal
-		 	    	valor="\"" + object.toString() + "\"";
+		 	    	// object is a literal
+		 	    	System.out.println("valor");
+		 	    	valor= object.asNode().getLiteralLexicalForm().toString();
 		 	        System.out.print("\"" + object.toString() + "\"");
 		 	    }
 		 	   
@@ -265,7 +268,7 @@ public class ProcesaOwl {
 		 	     valorlongitud=valor;
 			 	 break;
 		 	    case "Precio":
-			 	 valorprecio=valor;
+		 	     valorprecio=valor;
 				 break;  
 		 	   }
 		 	  
@@ -276,7 +279,7 @@ public class ProcesaOwl {
 		 		instancia = model.createIndividual(NS+nombrerecurso,bares);
 		 		instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
 		 		instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
-		 		instancia.setPropertyValue(precio, model.createTypedLiteral(valorprecio));
+		 		instancia.setPropertyValue(precio, model.createTypedLiteral(Double.valueOf(valorprecio) ));
 		 		instancia.setPropertyValue(longitud, model.createTypedLiteral(valorlongitud));
 		 	  }
 		 	  
@@ -349,7 +352,7 @@ public class ProcesaOwl {
 	
 	public static void main(String[] args) 
 	{
-		cargaRdfRestaurants();
+		//cargaRdfRestaurants();
 		carga();
 	}
 }

@@ -2,8 +2,6 @@ package cargaCSV;
 
 
 
-import java.io.File;
-import java.io.PrintWriter;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.net.URISyntaxException;
@@ -13,6 +11,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -26,6 +26,7 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.RDFNode;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.map.PointSelectEvent;
 import org.primefaces.model.map.DefaultMapModel;
@@ -42,7 +43,7 @@ import pojos.Resultado;
 		
 		private transient  List<Resultado> resultado= new java.util.ArrayList<>();
 		
-		private BigDecimal presupuesto;
+		private Double presupuesto;
 
 		private Double latitud;
 		
@@ -51,7 +52,11 @@ import pojos.Resultado;
 		private MapModel model = new DefaultMapModel();
 		 
 		private MapModel simpleModel;
-		  private String myMarker; //Your object
+		
+		private String myMarker; //Your object
+		
+	     
+	    
 		  //prueba
 	    @PostConstruct
 	    public void init() {
@@ -72,18 +77,16 @@ import pojos.Resultado;
 	        return simpleModel;
 	    }
 	    
-	    
-	    
-	    
-	    public BigDecimal getPresupuesto() {
+
+		
+		public Double getPresupuesto() {
 			return presupuesto;
 		}
 
-		public void setPresupuesto(BigDecimal presupuesto) {
+		public void setPresupuesto(Double presupuesto) {
 			this.presupuesto = presupuesto;
 		}
 
-		
 		public Double getLatitud() {
 			return latitud;
 		}
@@ -170,9 +173,10 @@ import pojos.Resultado;
 	    
 	    
 	    public void ConsultaPorPrecio()
-		{
-		
-	    	 String userdir = "";
+		{		
+	   	
+	   
+	    	String userdir = "";
 	 		try {	
 	 			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
 	 		} catch (URISyntaxException e3) {
@@ -185,26 +189,33 @@ import pojos.Resultado;
 	 			model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
 	 			model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
 			    Consulta(model);
+			    
 		}
 		
 		public void Consulta(OntModel model) {
 		
+			Double valor=this.presupuesto;
 			
 			String SparQlIndividual=
 		    	     "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
 		             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
 		             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
 		             "SELECT * { { " +
-		             "select ?precio "+
+		             "select ?nombre ?precio "+
 		             "where { "
-		             + "?dataP rdf:type ns:Discoteca . "
-		             + "?dataP ns:nombre ?precio . }  } " 
+		             + "?dataP rdf:type ns:Discoteca ."
+		             + "?dataP ns:nombre ?nombre ; "
+		             + "	   ns:precio ?precio . "
+		             + " FILTER (?precio > "+valor+") . "
+		             + " } } "
 		             + " UNION { "
-					 + "SELECT ?precio  "
+					 + "SELECT ?nombre ?precio  "
 					 + "WHERE  "
 					 + "{  "
-			         + "   ns:r1 ns:tieneFloreria ?nombre. "
-			         + "   ?nombre ns:nombre ?precio "
+			         + "  ?datosR rdf:type ns:Restaurant ."
+			         + "  ?datosR ns:nombre ?nombre ; "
+			         + "	      ns:precio ?precio . "
+		             + " FILTER (?precio > "+valor+") ."
 			         + "} } }";	
 		        
 			
@@ -216,11 +227,25 @@ import pojos.Resultado;
 			 	
 			   ResultSet results = qe.execSelect();
 			   ResultSetFormatter.out(System.out, results, query) ;
-			   while (results.hasNext()) {
-			  QuerySolution qs = results.next();
-			   Resultado result=new Resultado(qs.getLiteral("precio").toString(),"dd","bb");
+			   while (results.hasNext()) 
+			   {
+			   System.out.println("llego a cargar los literales");
+			   QuerySolution qs = results.next();
+			   RDFNode a = qs.get("precio") ;
+			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),a.asNode().getLiteralLexicalForm().toString());
 			   resultado.add(result);
 			   }
+			   Resultado result=new Resultado("1","dd","bb");
+			   Resultado result2=new Resultado("2","dd","bb");
+			   Resultado result3=new Resultado("3","dd","bb");
+			
+			   resultado.add(result);
+			   resultado.add(result2);
+			   resultado.add(result3);
+			  
+			   
+			  // cars1 = service.createCars(10);
+			   
 			} 
 			finally 
 			{ 
@@ -228,23 +253,23 @@ import pojos.Resultado;
 			}
 			//forresultado
 			
+			
+			//org.primefaces.context.RequestContext.getCurrentInstance().update(getObtieneParent("forresultado"));
 			   
 			RequestContext requestContext = RequestContext.getCurrentInstance();
 			requestContext.update("forresultado:listado");
 			RequestContext.getCurrentInstance().execute("window.open('resultado.xhtml')");
 			
-//			ExternalContext ec = FacesContext.getCurrentInstance()
-//			        .getExternalContext();
-//			try {
-//			    ec.redirect(ec.getRequestContextPath()
-//			            + "/resultado.xhtml");
-//			} catch (IOException e) {
-//			    // TODO Auto-generated catch block
-//			    e.printStackTrace();
-//			}
 			
 		}
 
+		
+		
+		public String getObtieneParent(String val) {
+			String res = ComponentResolver.resolve(val);
+			return res;
+		}
+		
 		public List<Resultado> getResultado() {
 			return resultado;
 		}
@@ -252,7 +277,9 @@ import pojos.Resultado;
 		public void setResultado(List<Resultado> resultado) {
 			this.resultado = resultado;
 		}
-	    
+
+	
+		
 	    	    
 	}
 	

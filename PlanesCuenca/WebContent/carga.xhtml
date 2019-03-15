@@ -77,15 +77,19 @@
         
         <div>
         	<p:outputLabel>Ingrese el presupuesto</p:outputLabel>
-        	<p:inputText value="#{googleMapView.presupuesto}"  ></p:inputText>
+        	<p:inputNumber value="#{googleMapView.presupuesto}" required="true" requiredMessage="Debe ingresar el valor" >
+        		<p:ajax event="keyup" update="@this" immediate="true" />
+        	</p:inputNumber>
         </div>
         <div>
          
         	<p:commandButton actionListener="#{googleMapView.testButtonAction}" label="Buscar Plan POR UBICACION" value="Buscar Plan POR UBICACION" />
 
-			<p:commandButton actionListener="#{googleMapView.ConsultaPorPrecio}" value="POR PRECIO" label="Generar Plan" />
+			<p:commandButton actionListener="#{googleMapView.ConsultaPorPrecio}" value="POR PRECIO" label="Generar Plan" process="@this"/>
 
         </div>
+        
+    
         </h:form>   
     </h:body>
 </html>
