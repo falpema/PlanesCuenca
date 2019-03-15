@@ -23,6 +23,7 @@ import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.primefaces.context.RequestContext;
 
+import cargaCSV.GoogleMapView;
 import cargaCSV.cargaCSVtoRDF;
 import pojos.Resultado;
 
@@ -79,6 +80,17 @@ public class CtrConsultarPlan {
 		this.respOpenSparql = respOpenSparql;
 	}
 
+	
+
+	public List<Resultado> getResultado() {
+		return resultado;
+	}
+
+
+	public void setResultado(List<Resultado> resultado) {
+		this.resultado = resultado;
+	}
+
 
 	public  void consultarPlan(	BigDecimal presupuesto,Double latitud, Double longitud){
 	 String userdir = "";
@@ -99,20 +111,22 @@ public class CtrConsultarPlan {
 		             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
 		             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
 		             "SELECT * { { " +
-		             "select ?precio ?longitud "+ //?latitud 
+		             "select ?nombre ?precio ?longitud ?latitud  "+ //
 		             "where { "
 		             + "?dataP rdf:type ns:Discoteca . "
-		             + "?dataP ns:nombre ?precio .  "
-		            // + "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
+		             + "?dataP ns:nombre ?nombre .  "
+		             + "?dataP ns:precio ?precio .  "
+		             + "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
 		             + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
 		            //		 + "?dataP ns:longitud ?longitud   ."
 		             + " }  } " 
 					 + " UNION { "
-				    + "select ?precio ?longitud "+  //?latitud 
+				    + "select ?nombre ?precio ?longitud ?latitud "+  // 
 		             "where { "
 		             + "?dataP rdf:type ns:Restaurant . "
-		             + "?dataP ns:nombre ?precio .  "
-		             //+ "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
+		             + "?dataP ns:nombre ?nombre .  "
+		             + "?dataP ns:precio ?precio .  "
+		             + "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
 		             + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
 		        	 //+ "?dataP ns:longitud ?longitud   ."
 		             + "} } } ";	
@@ -126,19 +140,20 @@ public class CtrConsultarPlan {
 			QueryExecution qe = QueryExecutionFactory.create(query, model);		 
 			try {
 			   ResultSet results = qe.execSelect();
-			   ResultSetFormatter.out(System.out, results, query) ;
+	
 			   while (results.hasNext()) {
 				  QuerySolution qs = results.next();
-			   Resultado result=new Resultado(qs.getLiteral("precio").toString(),"dd","bb");
+			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),qs.getLiteral("latitud").toString()+","+qs.getLiteral("longitud").toString(),qs.getLiteral("precio").toString());
 			   resultado.add(result);
 			   }
+			 //  ResultSetFormatter.out(System.out, qe.execSelect(), query) ;
 			} finally { qe.close() ; }
 		
 		//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
-		
+
 		RequestContext requestContext = RequestContext.getCurrentInstance();
 		requestContext.update("forresultado:listado");
-		RequestContext.getCurrentInstance().execute("window.open('resultado.xhtml')");
+		RequestContext.getCurrentInstance().execute("window.open('resultadoBusqUbic.xhtml')");
 	}
 	
 	

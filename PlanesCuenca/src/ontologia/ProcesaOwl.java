@@ -141,9 +141,12 @@ public class ProcesaOwl {
 			if (resto == 0) {
 				instancia = model.createIndividual(NS + nombrerecurso, restaurant);
 				instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
-				instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
+				//instancia.setPropertyValue(latitud, model.createTypedLiteral(valorlatitud));
+				instancia.setPropertyValue(latitud,model.createTypedLiteral(Double.valueOf(valorlatitud)));
+				
 				instancia.setPropertyValue(precio,model.createTypedLiteral(Double.valueOf(valorprecio) ));//model.createTypedLiteral(valorprecio));
-				instancia.setPropertyValue(longitud,model.createTypedLiteral(valorlongitud));
+				//instancia.setPropertyValue(longitud,model.createTypedLiteral(valorlongitud));
+				instancia.setPropertyValue(longitud,model.createTypedLiteral(Double.valueOf(valorlongitud)));
 				// model.createTypedLiteral(valorlongitud));
 			}
 
