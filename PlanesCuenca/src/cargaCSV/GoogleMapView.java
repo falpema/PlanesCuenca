@@ -265,10 +265,10 @@ import pojos.Resultado;
 
 		
 		
-		public String getObtieneParent(String val) {
-			String res = ComponentResolver.resolve(val);
-			return res;
-		}
+//		public String getObtieneParent(String val) {
+//			String res = ComponentResolver.resolve(val);
+//			return res;
+//		}
 		
 		public List<Resultado> getResultado() {
 			return resultado;
