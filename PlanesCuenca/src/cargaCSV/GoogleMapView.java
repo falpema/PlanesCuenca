@@ -18,6 +18,8 @@ import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
 
+import planesCuenca.CtrConsultarPlan;
+
 	@ManagedBean
 	public class GoogleMapView implements Serializable {
 		
@@ -126,9 +128,14 @@ import org.primefaces.model.map.Marker;
 	    //generarPlanOntologia(this.presupuesto);
 	    	
 	    	
-	    	System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
+	    	
 	       // return "anotherPage.xhtml";
+	        latitud = -79.00;
+	        longitud = -3.00;
 	        
+	        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
+	        
+	        CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
 	    	// create OntModel
 //			OntModel model = ModelFactory.createOntologyModel();
 //			// read camera ontology
