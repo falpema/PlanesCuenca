@@ -66,9 +66,10 @@ public class CtrCargaDataToRdf {
 		 String resp = json2rdf() ;//crear el rdf restaurantes a partir del geojson
 		 cargaCSVtoRDF.ejecutarCSV(); // crea rdf bares desde csv
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se completo la creacion de Rdfs de fuentes heterogeneas."));
-
+		 //crear rdf de la floreria
 		 ProcesaOwl.cargaRdfRestaurants();
-		 ProcesaOwl.carga();
+		 ProcesaOwl.carga();  //cargar los discos
+		 
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar Rdfs en Ontologica correcta."));
 		 System.out.println("ontologia cargada en resources/ontologia_general_cargada.owl");
 	}

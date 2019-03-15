@@ -77,11 +77,11 @@
         
         <div>
         	<p:outputLabel>Ingrese el presupuesto</p:outputLabel>
-        	<p:inputText value="#{googleMapView.presupuesto}"  required="true" validatorMessage="Ingrese el Presupuesto Por Favor"></p:inputText>
+        	<p:inputText value="#{googleMapView.presupuesto}"  ></p:inputText>
         </div>
         <div>
          
-        	<p:commandButton actionListener="#{googleMapView.testButtonAction}" label="Generar Plan" value="Generar Plan" />
+        	<p:commandButton actionListener="#{googleMapView.testButtonAction}" label="Buscar Plan POR UBICACION" value="Buscar Plan POR UBICACION" />
 
 			<p:commandButton actionListener="#{googleMapView.ConsultaPorPrecio}" value="POR PRECIO" label="Generar Plan" />
 

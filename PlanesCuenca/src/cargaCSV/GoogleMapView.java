@@ -149,12 +149,13 @@ import pojos.Resultado;
 	    	
 	    	
 	       // return "anotherPage.xhtml";
-	        latitud = -79.00;
-	        longitud = -3.00;
+	    	longitud = -79.00;
+	    	latitud = -2.92;
 	        
 	        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
 	        
-	        CtrConsultarPlan.consultarPlan(presupuesto, latitud, longitud);
+	        CtrConsultarPlan  cp = new CtrConsultarPlan();
+	        cp.consultarPlan(presupuesto, latitud, longitud);
 	    	// create OntModel
 //			OntModel model = ModelFactory.createOntologyModel();
 //			// read camera ontology
