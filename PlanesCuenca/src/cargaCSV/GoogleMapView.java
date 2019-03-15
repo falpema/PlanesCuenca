@@ -57,7 +57,7 @@ import pojos.Resultado;
 	    public void init() {
 	        simpleModel = new DefaultMapModel();
 	          
-	        //Shared coordinates
+	        //Shared coordinates            lat     long
 	        LatLng coord1 = new LatLng(-2.901133, -79.003719);
 	        LatLng coord2 = new LatLng(-2.900649, -79.001293);
 	        

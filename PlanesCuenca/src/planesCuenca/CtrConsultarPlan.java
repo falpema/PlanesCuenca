@@ -56,7 +56,8 @@ public class CtrConsultarPlan {
 		             + "?dataP rdf:type ns:Discoteca . "
 		             + "?dataP ns:nombre ?precio .  "
 		            // + "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
-		            		  + "?dataP ns:longitud ?longitud FILTER (?longitud > "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
+		             + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
+		            //		 + "?dataP ns:longitud ?longitud   ."
 		             + " }  } " 
 					 + " UNION { "
 				    + "select ?precio ?longitud "+  //?latitud 
@@ -64,8 +65,9 @@ public class CtrConsultarPlan {
 		             + "?dataP rdf:type ns:Restaurant . "
 		             + "?dataP ns:nombre ?precio .  "
 		             //+ "?dataP ns:latitud ?latitud FILTER (?latitud > "+(latitud - 0.05)+" && ?latitud <= "+(latitud + 0.05)+" ) ."
-		            		  + "?dataP ns:longitud ?longitud FILTER (?longitud > "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
-			         + "} } } ";	
+		             + "?dataP ns:longitud ?longitud FILTER (?longitud >= "+(longitud - 0.006)+" && ?longitud <= "+(longitud + 0.006)+" ) ."
+		        	 //+ "?dataP ns:longitud ?longitud   ."
+		             + "} } } ";	
 		        
 			System.out.println(SparQlIndividual);
 			

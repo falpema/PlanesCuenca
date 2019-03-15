@@ -117,8 +117,8 @@ public class ProcesaOwl {
 			}
 			if (predicate.getLocalName().compareTo("geometry") == 0) {
 				String[] internData = valor.split(",");
-				valorlatitud = internData[0].substring(internData[0].indexOf("[")+1, internData[0].length());
-				valorlongitud = internData[1].substring(0, internData[1].indexOf("]"));
+				valorlongitud = internData[0].substring(internData[0].indexOf("[")+1, internData[0].length());
+				valorlatitud = internData[1].substring(0, internData[1].indexOf("]"));
 			}
 
 			if (predicate.getLocalName().compareTo("properties") == 0) {
