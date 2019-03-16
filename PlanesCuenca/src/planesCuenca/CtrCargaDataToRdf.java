@@ -69,6 +69,12 @@ public class CtrCargaDataToRdf {
 		 //crear rdf de la floreria
 		 ProcesaOwl.cargaRdfRestaurants();
 		 ProcesaOwl.carga();  //cargar los discos
+		 try {
+			ProcesaOwl.cargattl();//carga florerias
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 
 		 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Cargar Rdfs en Ontologica correcta."));
 		 System.out.println("ontologia cargada en resources/ontologia_general_cargada.owl");
