@@ -106,7 +106,8 @@ html, body {
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   foaf: http://xmlns.com/foaf/0.1/
   gr: http://purl.org/goodrelations/v1#
-  xsd: http://www.w3.org/2001/XMLSchema#">
+  xsd: http://www.w3.org/2001/XMLSchema#
+  ns: http://example.org/ns#">
 					<div>
 						<p:dataList id="listado" value="#{ctrConsultarPlan.resultado}"
 							var="productos" type="ordered">
@@ -117,7 +118,13 @@ html, body {
 								<h1>
 									<span property="gr:name">#{productos.nombre}</span>
 								</h1>
-
+											<div rel="s:price">
+									Precio:
+									<div typeof="ns:price">
+										<span property="s:price">#{productos.precio}</span> 
+											
+									</div>
+										</div>
 								<p property="gr:description">The Canon Rebel T2i (EOS 550D)
 									is Cannon's top-of-the-line consumer digital SLR camera. It can
 									shoot up to 18 megapixel resolution photos and features an ISO
@@ -139,8 +146,8 @@ html, body {
 									property="gr:hasCurrencyValue" datatype="xsd:float">899</span>
 								</span> Localizacion:
 								<div rel="s:GeoCoordinates">
-									<span property="s:latitude" content="45.75">-778</span> <span
-										property="s:longitude" content="49.98"> -7878</span>
+									<span property="s:latitude" content="#{productos.latitud}">#{productos.latitud}</span> <span
+										property="s:longitude" content="#{productos.longitud}"> #{productos.longitud}</span>
 								</div>
 
 							</div>

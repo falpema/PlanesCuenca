@@ -227,12 +227,12 @@ import pojos.Resultado;
 			   System.out.println("llego a cargar los literales");
 			   QuerySolution qs = results.next();
 			   RDFNode a = qs.get("precio") ;
-			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),a.asNode().getLiteralLexicalForm().toString());
+			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(), Double.valueOf(a.asNode().getLiteralLexicalForm().toString()));
 			   resultado.add(result);
 			   }
-			   Resultado result=new Resultado("1","dd","bb");
-			   Resultado result2=new Resultado("2","dd","bb");
-			   Resultado result3=new Resultado("3","dd","bb");
+			   Resultado result=new Resultado("1","dd",0.0);
+			   Resultado result2=new Resultado("2","dd",0.0);
+			   Resultado result3=new Resultado("3","dd",0.0);
 			
 			   resultado.add(result);
 			   resultado.add(result2);

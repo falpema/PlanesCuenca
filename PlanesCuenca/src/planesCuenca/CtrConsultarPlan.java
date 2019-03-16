@@ -160,7 +160,7 @@ public class CtrConsultarPlan {
 	
 			   while (results.hasNext()) {
 				  QuerySolution qs = results.next();
-			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),qs.getLiteral("latitud").toString()+","+qs.getLiteral("longitud").toString(),qs.getLiteral("precio").toString());
+			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),qs.getLiteral("latitud").toString()+","+qs.getLiteral("longitud").toString(),qs.getLiteral("precio").getDouble(),qs.getLiteral("latitud").getDouble(),qs.getLiteral("longitud").getDouble());
 			   resultado.add(result);
 			   }
 			 //  ResultSetFormatter.out(System.out, qe.execSelect(), query) ;
