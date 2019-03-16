@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<florerias>
+	<id idf="1">
+		<nombre>Glamour Floreria</nombre>
+		<direccion>Avenida de las Americas y Calle del Batan, Cuenca</direccion>
+		<latitud>-2.8956645</latitud>
+		<longitud>-79.0243406</longitud>
+		<servicio>
+			<descripcion>10 rosas,10 chocolates ferrero y peluche pequeño</descripcion>
+			<precio>8.50</precio>
+		</servicio>
+		<servicio>
+			<descripcion>20 rosas,15 chocolates ferrero y peluche mediano</descripcion>
+			<precio>15</precio>
+		</servicio>
+		<servicio>
+			<descripcion>20 rosas,20 chocolates ferrero y peluche grande</descripcion>
+			<precio>21</precio>
+		</servicio>
+	</id>
+	<id idf="2">
+		<nombre>Persa Flor</nombre>
+		<direccion>Ave Remigio Crespo Toral, Cuenca</direccion>
+		<latitud>-2.9068172</latitud>
+		<longitud>-79.0077422</longitud>
+		<servicio>
+			<descripcion>arreglo de rosas pequeño,caja de chocolates noggis pequeño y tarjeta personalizada</descripcion>
+			<precio>9</precio>
+		</servicio>
+		<servicio>
+			<descripcion>arreglo de rosas mediano con orquideas,caja de chocolates noggis mediano y tarjeta personalizada</descripcion>
+			<precio>15.60</precio>
+		</servicio>
+		<servicio>
+			<descripcion>arreglo de rosas grande con orquideas y gardenias,caja de chocolates noggis grande y tarjeta personalizada</descripcion>
+			<precio>23</precio>
+		</servicio>
+		<servicio>
+			<descripcion>arreglo de rosas grande con orquideas,gardenias y tulipanes,caja de chocolates noggis extra grande y tarjeta personalizada</descripcion>
+			<precio>28</precio>
+		</servicio>
+	</id>
+</florerias>
