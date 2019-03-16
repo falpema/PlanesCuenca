@@ -90,9 +90,52 @@ html, body {
 				label="Buscar Plan POR UBICACION" value="Buscar Plan POR UBICACION" oncomplete ="PF('wvLsResultado').show()" update="frmLsResultado" />
 
 			<p:commandButton actionListener="#{googleMapView.ConsultaPorPrecio}"
-				value="POR PRECIO" label="Generar Plan" />
+				value="POR PRECIO" label="Generar Plan" update="@form" />
 
 		</div>
+		
+	<p:panelGrid rendered="#{googleMapView.activarpanelprecios}">
+        
+        <h3 style="margin-top: 0">RESULTADO POR PRECIOS:</h3>
+
+		<div prefix="
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  foaf: http://xmlns.com/foaf/0.1/
+  gr: http://purl.org/goodrelations/v1#
+  xsd: http://www.w3.org/2001/XMLSchema#">
+			<div>
+			
+			<p:dataList id="listado" value="#{googleMapView.resultado}" var="productos" type="ordered">
+				<div typeof="gr:BusinessEntity">
+					<h1><span property="gr:name">#{productos.nombre}</span> </h1>
+					<p property="gr:description">Se encuentra ubicado en </p>
+					Contact Details:
+					<div rel="s:address">
+						Direccion Principal:
+						<div typeof="s:PostalAddress">
+							<span property="s:streetAddress">#{productos.direccion}</span> <span
+								property="s:addressLocality">Cuenca</span>
+						</div>
+					</div>
+					<div rel="foaf:page" href="http://www.acme-bagels.com/"></div>
+					<span property="gr:hasPriceSpecification"
+						typeof="gr:UnitPriceSpecification"> <span
+						property="gr:hasCurrency" content="USD">$</span> <span
+						property="gr:hasCurrencyValue" datatype="xsd:float">#{productos.preciostring}</span>
+					</span> Localizacion:
+					<div rel="s:GeoCoordinates">
+						<span property="s:latitude" content="#{productos.latitud}">#{productos.latitudstring}</span> 
+						<span property="s:longitude" content="#{productos.longitud}"> #{productos.longitudstring}</span>
+					</div>
+
+				</div>
+		     </p:dataList>
+
+			</div>
+		</div>
+    </p:panelGrid>	
+		
+		
 	</h:form>
 <p:dialog position="top" fitViewport="true" id="ResultadoUbicacion"
 	widgetVar="wvLsResultado" witdh="45%" modal="true">

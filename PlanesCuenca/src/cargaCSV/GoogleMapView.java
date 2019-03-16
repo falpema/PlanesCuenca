@@ -41,6 +41,8 @@ import pojos.Resultado;
 @ApplicationScoped
 	public class GoogleMapView implements Serializable {
 		
+		private boolean activarpanelprecios;
+		
 		private transient  List<Resultado> resultado= new java.util.ArrayList<>();
 		
 		private Double presupuesto;
@@ -168,110 +170,113 @@ import pojos.Resultado;
 	    
 	    
 	    public void ConsultaPorPrecio()
-		{		
-	   	
-	   
-	    	String userdir = "";
-	 		try {	
-	 			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
-	 		} catch (URISyntaxException e3) {
-	 			// TODO Auto-generated catch block
-	 			e3.printStackTrace();
-	 		}
-	 			
-	 			OntModel model;
-	 			System.out.println(userdir);
-	 			model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
-	 			model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
-			    Consulta(model);
-			    
-		}
-		
-		public void Consulta(OntModel model) {
-		
-			Double valor=this.presupuesto;
-			
-			String SparQlIndividual=
-		    	     "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
-		             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
-		             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
-		             "SELECT * { { " +
-		             "select ?nombre ?precio "+
-		             "where { "
-		             + "?dataP rdf:type ns:Discoteca ."
-		             + "?dataP ns:nombre ?nombre ; "
-		             + "	   ns:precio ?precio . "
-		             + " FILTER (?precio > "+valor+") . "
-		             + " } } "
-		             + " UNION { "
-					 + "SELECT ?nombre ?precio  "
-					 + "WHERE  "
-					 + "{  "
-			         + "  ?datosR rdf:type ns:Restaurant ."
-			         + "  ?datosR ns:nombre ?nombre ; "
-			         + "	      ns:precio ?precio . "
-		             + " FILTER (?precio > "+valor+") ."
-			         + "} } }";	
-		        
-			
-			
-			Query query = QueryFactory.create(SparQlIndividual);		 
-			// Ejecutar la consulta y obtener los resultados
-			QueryExecution qe = QueryExecutionFactory.create(query, model);		 
-			try {
-			 	
-			   ResultSet results = qe.execSelect();
-			   ResultSetFormatter.out(System.out, results, query) ;
-			   while (results.hasNext()) 
-			   {
-			   System.out.println("llego a cargar los literales");
-			   QuerySolution qs = results.next();
-			   RDFNode a = qs.get("precio") ;
-			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(), Double.valueOf(a.asNode().getLiteralLexicalForm().toString()));
-			   resultado.add(result);
-			   }
-			   Resultado result=new Resultado("1","dd",0.0);
-			   Resultado result2=new Resultado("2","dd",0.0);
-			   Resultado result3=new Resultado("3","dd",0.0);
-			
-			   resultado.add(result);
-			   resultado.add(result2);
-			   resultado.add(result3);
-			  
-			   
-			  // cars1 = service.createCars(10);
-			   
-			} 
-			finally 
-			{ 
-				qe.close() ; 
-			}
-			//forresultado
-			
-			
-			//org.primefaces.context.RequestContext.getCurrentInstance().update(getObtieneParent("forresultado"));
-			   
-			RequestContext requestContext = RequestContext.getCurrentInstance();
-			requestContext.update("forresultado:listado");
-			RequestContext.getCurrentInstance().execute("window.open('resultado.xhtml')");
-			
-			
-		}
+	  		{		
+	  	   	
+	  	    	this.activarpanelprecios=true;
+	  	    	
+	  	    	String userdir = "";
+	  	 		try {	
+	  	 			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+	  	 		} catch (URISyntaxException e3) {
+	  	 			// TODO Auto-generated catch block
+	  	 			e3.printStackTrace();
+	  	 		}
+	  	 			
+	  	 			OntModel model;
+	  	 			System.out.println(userdir);
+	  	 			model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
+	  	 			model.read(userdir+ "/ontologia_general_cargada.owl","RDF/XML"); 
+	  			    Consulta(model);
+	  			    
+	  		}
+	  		
+	  		public void Consulta(OntModel model) {
+	  		
+	  			Double valor=this.presupuesto;
+	  			
+	  			String SparQlIndividual=
+	  		    	     "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
+	  		             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
+	  		             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
+	  		             "SELECT * { { " +
+	  		             "select ?nombre ?precio ?latitud ?longitud ?direccion "+
+	  		             "where { "
+	  		             + "?dataP rdf:type ns:Discoteca ."
+	  		             + "?dataP ns:nombre ?nombre ; "
+	  		             + "	   ns:precio ?precio ; "
+	  		             + "	   ns:latitud ?latitud ; "
+	  		             + "	   ns:longitud ?longitud ; "
+	  		             + "	   ns:direccion ?direccion . "
+	  		             + " FILTER (?precio > "+valor+") . "
+	  		             + " } } "
+	  		             + " UNION { "
+	  					 + "SELECT ?nombre ?precio ?latitud ?longitud ?direccion "
+	  					 + "WHERE  "
+	  					 + "{  "
+	  			         + "  ?datosR rdf:type ns:Restaurant ."
+	  			         + "  ?datosR ns:nombre ?nombre ; "
+	  			         + "	      ns:precio ?precio ; "
+	  			         + "	      ns:latitud ?latitud ; "
+	  			         + "	      ns:longitud ?longitud ; "
+	  			         + "	      ns:direccion ?direccion . "
+	  		             + " FILTER (?precio > "+valor+") ."
+	  			         + "} } }";	
+	  		        
+	  			
+	  			
+	  			Query query = QueryFactory.create(SparQlIndividual);		 
+	  			// Ejecutar la consulta y obtener los resultados
+	  			QueryExecution qe = QueryExecutionFactory.create(query, model);		 
+	  			try {
+	  			 	
+	  			   ResultSet results = qe.execSelect();
+	  			   //ResultSetFormatter.out(System.out, results, query) ;
+	  			   while (results.hasNext()) 
+	  			   {
+	  			   System.out.println("llego a cargar los literales");
+	  			   QuerySolution qs = results.next();
+	  			   RDFNode prec = qs.get("precio") ;
+	  			   RDFNode lati = qs.get("latitud") ;
+	  			   RDFNode longi = qs.get("longitud") ;
+	  			   RDFNode direccion = qs.get("direccion") ;
+	  			   Resultado result=new Resultado(qs.getLiteral("nombre").toString(),direccion.asNode().getLiteralLexicalForm().toString(),prec.asNode().getLiteralLexicalForm().toString(), lati.asNode().getLiteralLexicalForm(),longi.asNode().getLiteralLexicalForm().toString());
+	  			   resultado.add(result);
+	  			   }
+	  			   
+	  			   
+	  			} 
+	  			finally 
+	  			{ 
+	  				qe.close() ; 
+	  			}
+	  			//forresultado
+	  			
+	  				
+	  			
+	  		}
 
-		
-		
-//		public String getObtieneParent(String val) {
-//			String res = ComponentResolver.resolve(val);
-//			return res;
-//		}
-		
-		public List<Resultado> getResultado() {
-			return resultado;
-		}
+	  		
+	  		
+//	  		public String getObtieneParent(String val) {
+//	  			String res = ComponentResolver.resolve(val);
+//	  			return res;
+//	  		}
+	  		
+	  		public List<Resultado> getResultado() {
+	  			return resultado;
+	  		}
 
-		public void setResultado(List<Resultado> resultado) {
-			this.resultado = resultado;
-		}
+	  		public void setResultado(List<Resultado> resultado) {
+	  			this.resultado = resultado;
+	  		}
+
+	  		public boolean isActivarpanelprecios() {
+	  			return activarpanelprecios;
+	  		}
+
+	  		public void setActivarpanelprecios(boolean activarpanelprecios) {
+	  			this.activarpanelprecios = activarpanelprecios;
+	  		}
 
 	
 		

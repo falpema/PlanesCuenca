@@ -5,9 +5,11 @@ public class Resultado {
     public String nombre;
     public String direccion;
     public Double precio;
-    public  Double latitud;
-	
-	public  Double longitud;
+    public Double latitud;
+	public Double longitud;
+	public String preciostring;
+	public String latitudstring;
+	public String longitudstring;
     
 
     
@@ -27,6 +29,16 @@ public class Resultado {
 	}
 	
 	
+
+	public Resultado(String nombre, String direccion, String preciostring, String latitudstring,
+			String longitudstring) {
+		super();
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.preciostring = preciostring;
+		this.latitudstring = latitudstring;
+		this.longitudstring = longitudstring;
+	}
 
 	public Resultado(String nombre, String direccion, Double precio, Double latitud, Double longitud) {
 		super();
@@ -75,6 +87,30 @@ public class Resultado {
 
 	public void setLongitud(Double longitud) {
 		this.longitud = longitud;
+	}
+
+	public String getPreciostring() {
+		return preciostring;
+	}
+
+	public void setPreciostring(String preciostring) {
+		this.preciostring = preciostring;
+	}
+
+	public String getLatitudstring() {
+		return latitudstring;
+	}
+
+	public void setLatitudstring(String latitudstring) {
+		this.latitudstring = latitudstring;
+	}
+
+	public String getLongitudstring() {
+		return longitudstring;
+	}
+
+	public void setLongitudstring(String longitudstring) {
+		this.longitudstring = longitudstring;
 	}
     
     
