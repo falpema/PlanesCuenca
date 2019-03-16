@@ -1,12 +1,17 @@
 package ontologia;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.jena.graph.Node;
+import org.apache.jena.graph.Triple;
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntClass;
@@ -26,6 +31,10 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.lang.PipedRDFIterator;
+import org.apache.jena.riot.lang.PipedRDFStream;
+import org.apache.jena.riot.lang.PipedTriplesStream;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 import cargaCSV.cargaCSVtoRDF;
@@ -312,6 +321,111 @@ public class ProcesaOwl {
 		
 		
 		Consulta(model);
+	}
+	/*
+	 * Se carga las florerias
+	 * */
+	public static void cargattl() throws FileNotFoundException {
+		/**/
+		try {	
+			userdir = cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().substring(0, cargaCSVtoRDF.class.getResource("/datosRestaurantesCuenca.geojson").toURI().getPath().lastIndexOf("/"));
+		} catch (URISyntaxException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		OntModel model = null;	 
+		OntClass florerias = null;
+		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);	 
+		model.read(userdir+ "/resources/ontologia_general_cargada.owl","RDF/XML"); 
+		ExtendedIterator iteratorClasses = model.listClasses(); 
+		while ( iteratorClasses.hasNext() ){
+		    OntClass ontClass = (OntClass) iteratorClasses.next(); 
+		    if(ontClass.getLocalName().equals("Floreria"))
+		    {
+		    	florerias = ontClass;
+		    	System.out.println( florerias );		 
+			    ExtendedIterator iteratorInstances = florerias.listInstances();
+			    while ( iteratorInstances.hasNext() ){
+			       System.out.println( "\t"+iteratorInstances.next() );
+			    }
+		    }		    		    		    
+		}
+		DatatypeProperty nombre = model.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#nombre");		  
+	    DatatypeProperty precio = model.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#precio");	    
+	    DatatypeProperty latitud = model.getDatatypeProperty("http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#latitud");	    
+	    DatatypeProperty longitud = model.getDatatypeProperty("ttp://www.semanticweb.org/usuario/ontologies/2019/2/ruta#longitud");	    	
+		final String filename = userdir+"/src/recursos/florerias_cuenca.ttl";
+		PipedRDFIterator<Triple> iter = new PipedRDFIterator<>();
+        final PipedRDFStream<Triple> inputStream = new PipedTriplesStream(iter);        
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Runnable parser = new Runnable() {
+            @Override
+            public void run() {                
+                RDFDataMgr.parse(inputStream, filename);
+            }
+        };		
+        executor.submit(parser);
+	    Integer contador=0;
+	    String valor="";
+	    String valorlatitud="";
+	    String valorlongitud="";
+	    String valorprecio="";
+	    String valornombre="";
+	    String nombrerecurso="Flo";
+	    Individual instancia = null;
+        while (iter.hasNext()) {
+            Triple next = iter.next();  
+            Node subject=next.getSubject();
+            Node object=next.getObject();
+            Node predicate=next.getPredicate();
+            
+            System.out.println("Subject:  "+subject);
+            System.out.println("Object:  "+object);
+            System.out.println("Predicate:  "+predicate);
+            System.out.println("\n");
+            
+            if (object instanceof Node) {
+	 	    	valor=object.toString();
+	 	       System.out.print("objeto "+object.toString());
+	 	    } else {	 	      
+	 	    	valor="\"" + object.toString() + "\"";
+	 	        System.out.print("\"" + object.toString() + "\"");
+	 	    }
+            switch (predicate.getLocalName())
+		 	{
+		 		case "nombre" :
+		 		 nombrerecurso=object.toString().replace(" ", "").toUpperCase();
+		 		 valornombre=valor.toString();
+		 		 break;
+		 	    case "latitud":
+		 	     valorlatitud=valor;
+		 	     break;
+		 	    case "longitud":
+		 	     valorlongitud=valor;
+			 	 break;
+		 	    case "precio":
+			 	 valorprecio=valor;
+				 break; 
+		 	}
+            instancia = model.createIndividual(NS+nombrerecurso,florerias);
+	 		instancia.setPropertyValue(nombre, model.createTypedLiteral(valornombre));
+	 		instancia.setPropertyValue(latitud, model.createTypedLiteral(Double.valueOf(valorlatitud)));
+	 		instancia.setPropertyValue(longitud, model.createTypedLiteral(Double.valueOf(valorlongitud)));
+	 		instancia.setPropertyValue(precio, model.createTypedLiteral(valorprecio));
+        }
+        try
+	     {	     	 
+	     File file = new File(userdir+"/resources/ontologia_general_cargada.owl");	     
+	     if (!file.exists()){
+	          file.createNewFile();
+	     }
+	     model.write(new PrintWriter(file));	     
+	     }
+	     catch(Exception e)
+	     {
+	    	 
+	     }
+			   
 	}
 	public static void Consulta(OntModel model) {
 //		//RESULTADOS CON SPARQL							 			
