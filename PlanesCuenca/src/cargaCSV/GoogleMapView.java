@@ -159,14 +159,9 @@ import pojos.Resultado;
 	        
 	        CtrConsultarPlan  cp = new CtrConsultarPlan();
 	        cp.consultarPlan(presupuesto, latitud, longitud);
-	    	// create OntModel
-//			OntModel model = ModelFactory.createOntologyModel();
-//			// read camera ontology
-//			readOntology( "/home/txmunoz/git/PlanesCuenca/PlanesCuenca/src/ontologia/camera.owl", model );
-//			// start traverse
-//			traverseStart( model, null );
+
 	        
-			 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
+			// FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
 
 	        
 	    }

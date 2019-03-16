@@ -7,7 +7,9 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
@@ -31,10 +33,10 @@ import pojos.Resultado;
 * query to sparql this ontology
 * @author FABIAN PENALOZA mail falpema@gmail.com
 */
-@ManagedBean
-@ViewScoped
+@ManagedBean(eager=true)
+@ApplicationScoped
 public class CtrConsultarPlan {
-	private transient  List<Resultado> resultado= new java.util.ArrayList<>();
+	public transient  List<Resultado> resultado;
 	private String openSparql  = "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
@@ -83,6 +85,7 @@ public class CtrConsultarPlan {
 	
 
 	public List<Resultado> getResultado() {
+		  FacesContext facesContext = FacesContext.getCurrentInstance();
 		return resultado;
 	}
 
@@ -133,7 +136,7 @@ public class CtrConsultarPlan {
 		        
 			System.out.println(SparQlIndividual);
 			
-
+			resultado = new java.util.ArrayList<>() ;
 			
 			Query query = QueryFactory.create(SparQlIndividual);		 
 			// Ejecutar la consulta y obtener los resultados
@@ -148,12 +151,13 @@ public class CtrConsultarPlan {
 			   }
 			 //  ResultSetFormatter.out(System.out, qe.execSelect(), query) ;
 			} finally { qe.close() ; }
-		
+		System.out.println("Resultados Encontrados " +resultado.size());
 		//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se consulto correctamente el plan."));
-
-		RequestContext requestContext = RequestContext.getCurrentInstance();
-		requestContext.update("forresultado:listado");
-		RequestContext.getCurrentInstance().execute("window.open('resultadoBusqUbic.xhtml')");
+			
+		//RequestContext requestContext = RequestContext.getCurrentInstance();
+		//requestContext.update("forubic:listado");
+		//requestContext.execute("window.open('resultadoBusqUbic.jsf')");
+		//RequestContext.getCurrentInstance().execute("window.open('resultadoBusqUbic.jsf')");
 	}
 	
 	
