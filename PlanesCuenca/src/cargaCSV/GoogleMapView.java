@@ -125,6 +125,8 @@ import pojos.Resultado;
 	    	  //simpleModel.addOverlay(new Marker(coordnueva, "Punto Busqueda"));
 	    	  LatLng location = event.getLatLng();
 	    	  addMarker(location.getLat(), location.getLng());
+	    	  latitud=location.getLat();
+	    	  longitud =location.getLng();
 	    	  
 	      }
 	    

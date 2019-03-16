@@ -76,13 +76,17 @@ html, body {
 				type="HYBRID" styleClass="gmap" model="#{googleMapView.simpleModel}">
 				<p:ajax event="pointSelect"
 					listener="#{googleMapView.onPointSelect}"
-					onPointSelectUpdate="messages" />
+					onPointSelectUpdate="messages" update="lat1,lon1"/>
 			</p:gmap>
 		</div>
 
 		<div>
 			<p:outputLabel>Ingrese el presupuesto</p:outputLabel>
 			<p:inputText value="#{googleMapView.presupuesto}"></p:inputText>
+		</div>
+		<div>
+		<p:inputText id="lat1" value="#{googleMapView.latitud}"  onchange ="copyField();" ></p:inputText>
+		<p:inputText id="lon1" value="#{googleMapView.longitud}"  onchange="copyField();" ></p:inputText>
 		</div>
 		<div>
 
@@ -168,10 +172,10 @@ html, body {
 											
 									</div>
 										</div>
-								<p property="gr:description">The Canon Rebel T2i (EOS 550D)
-									is Cannon's top-of-the-line consumer digital SLR camera. It can
-									shoot up to 18 megapixel resolution photos and features an ISO
-									range of 100-6400.</p>
+<!-- 								<p property="gr:description">The Canon Rebel T2i (EOS 550D) -->
+<!-- 									is Cannon's top-of-the-line consumer digital SLR camera. It can -->
+<!-- 									shoot up to 18 megapixel resolution photos and features an ISO -->
+<!-- 									range of 100-6400.</p> -->
 								Contact Details:
 								<div rel="s:address">
 									Main address:
