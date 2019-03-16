@@ -86,8 +86,8 @@ html, body {
 		</div>
 		<div>
 
-			<p:commandButton actionListener="#{googleMapView.testButtonAction}"
-				label="Buscar Plan POR UBICACION" value="Buscar Plan POR UBICACION" onclick="PF('wvLsResultado').show()" update="frmLsResultado" />
+			<p:commandButton actionListener="#{ctrConsultarPlan.consultarPlan}"
+				label="Buscar Plan POR UBICACION" value="Buscar Plan POR UBICACION" oncomplete ="PF('wvLsResultado').show()" update="frmLsResultado" />
 
 			<p:commandButton actionListener="#{googleMapView.ConsultaPorPrecio}"
 				value="POR PRECIO" label="Generar Plan" />

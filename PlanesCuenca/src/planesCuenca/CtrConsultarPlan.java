@@ -36,7 +36,14 @@ import pojos.Resultado;
 @ManagedBean(eager=true)
 @ApplicationScoped
 public class CtrConsultarPlan {
-	public transient  List<Resultado> resultado;
+	public   List<Resultado> resultado;
+	
+	private Double presupuesto;
+
+	private Double latitud;
+	
+	private Double longitud;
+	
 	private String openSparql  = "prefix ns:<http://www.semanticweb.org/usuario/ontologies/2019/2/ruta#>"+
             "prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>"+
             "prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
@@ -85,7 +92,7 @@ public class CtrConsultarPlan {
 	
 
 	public List<Resultado> getResultado() {
-		  FacesContext facesContext = FacesContext.getCurrentInstance();
+		  
 		return resultado;
 	}
 
@@ -93,7 +100,14 @@ public class CtrConsultarPlan {
 	public void setResultado(List<Resultado> resultado) {
 		this.resultado = resultado;
 	}
-
+	
+	public  void consultarPlan(	){
+		longitud = -79.00;
+    	latitud = -2.92;
+        
+        System.out.println("Los datos para genera el plan son :"+latitud+longitud+presupuesto);
+		consultarPlan(presupuesto, latitud, longitud);
+	}
 
 	public  void consultarPlan(	Double presupuesto,Double latitud, Double longitud){
 	 String userdir = "";
